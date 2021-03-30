@@ -31,11 +31,74 @@ namespace LibraryProject
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ClaniTabPage = new System.Windows.Forms.TabPage();
+            this.iskanjeButton = new System.Windows.Forms.Button();
+            this.claniListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imePriimekTextBox = new System.Windows.Forms.TextBox();
             this.vraciloIzposojaTabPage = new System.Windows.Forms.TabPage();
+            this.vrniGradivoButton = new System.Windows.Forms.Button();
+            this.izposodiGradivoButton = new System.Windows.Forms.Button();
+            this.vsoGradivoListBox = new System.Windows.Forms.ListBox();
+            this.iskanjeGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.imePriimekLabel = new System.Windows.Forms.Label();
+            this.izposojenoGradivoListBox = new System.Windows.Forms.ListBox();
             this.iskanjeGradivaTabPage = new System.Windows.Forms.TabPage();
+            this.isciButton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.gradivoListBox = new System.Windows.Forms.ListBox();
             this.dodajGradivoTabPage = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dodajGradivoButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.dodajClanaTabPage = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.telefonTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.imePriimektextBox2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.gesloTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.kupljenoRadioButton1 = new System.Windows.Forms.RadioButton();
+            this.kupljenoRadioButton2 = new System.Windows.Forms.RadioButton();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.ClaniTabPage.SuspendLayout();
+            this.vraciloIzposojaTabPage.SuspendLayout();
+            this.iskanjeGroupBox.SuspendLayout();
+            this.iskanjeGradivaTabPage.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.dodajGradivoTabPage.SuspendLayout();
+            this.dodajClanaTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -54,6 +117,10 @@ namespace LibraryProject
             // 
             // ClaniTabPage
             // 
+            this.ClaniTabPage.Controls.Add(this.iskanjeButton);
+            this.ClaniTabPage.Controls.Add(this.claniListBox);
+            this.ClaniTabPage.Controls.Add(this.label1);
+            this.ClaniTabPage.Controls.Add(this.imePriimekTextBox);
             this.ClaniTabPage.Location = new System.Drawing.Point(4, 22);
             this.ClaniTabPage.Name = "ClaniTabPage";
             this.ClaniTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -62,8 +129,47 @@ namespace LibraryProject
             this.ClaniTabPage.Text = "Člani";
             this.ClaniTabPage.UseVisualStyleBackColor = true;
             // 
+            // iskanjeButton
+            // 
+            this.iskanjeButton.Location = new System.Drawing.Point(214, 9);
+            this.iskanjeButton.Name = "iskanjeButton";
+            this.iskanjeButton.Size = new System.Drawing.Size(75, 23);
+            this.iskanjeButton.TabIndex = 3;
+            this.iskanjeButton.Text = "Iskanje";
+            this.iskanjeButton.UseVisualStyleBackColor = true;
+            // 
+            // claniListBox
+            // 
+            this.claniListBox.FormattingEnabled = true;
+            this.claniListBox.Location = new System.Drawing.Point(8, 37);
+            this.claniListBox.Name = "claniListBox";
+            this.claniListBox.Size = new System.Drawing.Size(349, 290);
+            this.claniListBox.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ime in priimek:";
+            // 
+            // imePriimekTextBox
+            // 
+            this.imePriimekTextBox.Location = new System.Drawing.Point(88, 11);
+            this.imePriimekTextBox.Name = "imePriimekTextBox";
+            this.imePriimekTextBox.Size = new System.Drawing.Size(100, 20);
+            this.imePriimekTextBox.TabIndex = 0;
+            // 
             // vraciloIzposojaTabPage
             // 
+            this.vraciloIzposojaTabPage.Controls.Add(this.vrniGradivoButton);
+            this.vraciloIzposojaTabPage.Controls.Add(this.izposodiGradivoButton);
+            this.vraciloIzposojaTabPage.Controls.Add(this.vsoGradivoListBox);
+            this.vraciloIzposojaTabPage.Controls.Add(this.iskanjeGroupBox);
+            this.vraciloIzposojaTabPage.Controls.Add(this.imePriimekLabel);
+            this.vraciloIzposojaTabPage.Controls.Add(this.izposojenoGradivoListBox);
             this.vraciloIzposojaTabPage.Location = new System.Drawing.Point(4, 22);
             this.vraciloIzposojaTabPage.Name = "vraciloIzposojaTabPage";
             this.vraciloIzposojaTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -72,8 +178,135 @@ namespace LibraryProject
             this.vraciloIzposojaTabPage.Text = "Vracilo/izposoja";
             this.vraciloIzposojaTabPage.UseVisualStyleBackColor = true;
             // 
+            // vrniGradivoButton
+            // 
+            this.vrniGradivoButton.Location = new System.Drawing.Point(312, 237);
+            this.vrniGradivoButton.Name = "vrniGradivoButton";
+            this.vrniGradivoButton.Size = new System.Drawing.Size(75, 23);
+            this.vrniGradivoButton.TabIndex = 14;
+            this.vrniGradivoButton.Text = "Vrni";
+            this.vrniGradivoButton.UseVisualStyleBackColor = true;
+            // 
+            // izposodiGradivoButton
+            // 
+            this.izposodiGradivoButton.Location = new System.Drawing.Point(410, 237);
+            this.izposodiGradivoButton.Name = "izposodiGradivoButton";
+            this.izposodiGradivoButton.Size = new System.Drawing.Size(75, 23);
+            this.izposodiGradivoButton.TabIndex = 13;
+            this.izposodiGradivoButton.Text = "Izposodi";
+            this.izposodiGradivoButton.UseVisualStyleBackColor = true;
+            // 
+            // vsoGradivoListBox
+            // 
+            this.vsoGradivoListBox.FormattingEnabled = true;
+            this.vsoGradivoListBox.Location = new System.Drawing.Point(506, 79);
+            this.vsoGradivoListBox.Name = "vsoGradivoListBox";
+            this.vsoGradivoListBox.Size = new System.Drawing.Size(278, 329);
+            this.vsoGradivoListBox.TabIndex = 12;
+            // 
+            // iskanjeGroupBox
+            // 
+            this.iskanjeGroupBox.Controls.Add(this.label3);
+            this.iskanjeGroupBox.Controls.Add(this.label6);
+            this.iskanjeGroupBox.Controls.Add(this.textBox1);
+            this.iskanjeGroupBox.Controls.Add(this.textBox4);
+            this.iskanjeGroupBox.Controls.Add(this.textBox2);
+            this.iskanjeGroupBox.Controls.Add(this.label5);
+            this.iskanjeGroupBox.Controls.Add(this.label4);
+            this.iskanjeGroupBox.Controls.Add(this.textBox3);
+            this.iskanjeGroupBox.Location = new System.Drawing.Point(312, 79);
+            this.iskanjeGroupBox.Name = "iskanjeGroupBox";
+            this.iskanjeGroupBox.Size = new System.Drawing.Size(173, 134);
+            this.iskanjeGroupBox.TabIndex = 11;
+            this.iskanjeGroupBox.TabStop = false;
+            this.iskanjeGroupBox.Text = "Iskanje";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Inv. št.:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Založba:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(60, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(60, 100);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 9;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(60, 48);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 77);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Avtor:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Naslov:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(60, 74);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 7;
+            // 
+            // imePriimekLabel
+            // 
+            this.imePriimekLabel.AutoSize = true;
+            this.imePriimekLabel.Location = new System.Drawing.Point(8, 14);
+            this.imePriimekLabel.Name = "imePriimekLabel";
+            this.imePriimekLabel.Size = new System.Drawing.Size(68, 13);
+            this.imePriimekLabel.TabIndex = 1;
+            this.imePriimekLabel.Text = "*Ime priimek*";
+            // 
+            // izposojenoGradivoListBox
+            // 
+            this.izposojenoGradivoListBox.FormattingEnabled = true;
+            this.izposojenoGradivoListBox.Location = new System.Drawing.Point(8, 79);
+            this.izposojenoGradivoListBox.Name = "izposojenoGradivoListBox";
+            this.izposojenoGradivoListBox.Size = new System.Drawing.Size(278, 329);
+            this.izposojenoGradivoListBox.TabIndex = 0;
+            // 
             // iskanjeGradivaTabPage
             // 
+            this.iskanjeGradivaTabPage.Controls.Add(this.isciButton);
+            this.iskanjeGradivaTabPage.Controls.Add(this.groupBox1);
+            this.iskanjeGradivaTabPage.Controls.Add(this.gradivoListBox);
             this.iskanjeGradivaTabPage.Location = new System.Drawing.Point(4, 22);
             this.iskanjeGradivaTabPage.Name = "iskanjeGradivaTabPage";
             this.iskanjeGradivaTabPage.Size = new System.Drawing.Size(792, 424);
@@ -81,8 +314,122 @@ namespace LibraryProject
             this.iskanjeGradivaTabPage.Text = "Iskanje gradiva";
             this.iskanjeGradivaTabPage.UseVisualStyleBackColor = true;
             // 
+            // isciButton
+            // 
+            this.isciButton.Location = new System.Drawing.Point(17, 188);
+            this.isciButton.Name = "isciButton";
+            this.isciButton.Size = new System.Drawing.Size(75, 23);
+            this.isciButton.TabIndex = 15;
+            this.isciButton.Text = "Isci";
+            this.isciButton.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Location = new System.Drawing.Point(8, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 134);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Iskanje";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Inv. št.:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Založba:";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(60, 22);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 3;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(60, 100);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 9;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(60, 48);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Avtor:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Naslov:";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(60, 74);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 7;
+            // 
+            // gradivoListBox
+            // 
+            this.gradivoListBox.FormattingEnabled = true;
+            this.gradivoListBox.Location = new System.Drawing.Point(208, 48);
+            this.gradivoListBox.Name = "gradivoListBox";
+            this.gradivoListBox.Size = new System.Drawing.Size(278, 329);
+            this.gradivoListBox.TabIndex = 13;
+            // 
             // dodajGradivoTabPage
             // 
+            this.dodajGradivoTabPage.Controls.Add(this.label21);
+            this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton2);
+            this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton1);
+            this.dodajGradivoTabPage.Controls.Add(this.label20);
+            this.dodajGradivoTabPage.Controls.Add(this.textBox13);
+            this.dodajGradivoTabPage.Controls.Add(this.label15);
+            this.dodajGradivoTabPage.Controls.Add(this.textBox9);
+            this.dodajGradivoTabPage.Controls.Add(this.comboBox1);
+            this.dodajGradivoTabPage.Controls.Add(this.dodajGradivoButton);
+            this.dodajGradivoTabPage.Controls.Add(this.label10);
+            this.dodajGradivoTabPage.Controls.Add(this.label11);
+            this.dodajGradivoTabPage.Controls.Add(this.textBox12);
+            this.dodajGradivoTabPage.Controls.Add(this.textBox10);
+            this.dodajGradivoTabPage.Controls.Add(this.label13);
+            this.dodajGradivoTabPage.Controls.Add(this.textBox11);
+            this.dodajGradivoTabPage.Controls.Add(this.label12);
             this.dodajGradivoTabPage.Location = new System.Drawing.Point(4, 22);
             this.dodajGradivoTabPage.Name = "dodajGradivoTabPage";
             this.dodajGradivoTabPage.Size = new System.Drawing.Size(792, 424);
@@ -90,14 +437,251 @@ namespace LibraryProject
             this.dodajGradivoTabPage.Text = "Dodaj gradivo";
             this.dodajGradivoTabPage.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(71, 113);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // dodajGradivoButton
+            // 
+            this.dodajGradivoButton.Location = new System.Drawing.Point(87, 243);
+            this.dodajGradivoButton.Name = "dodajGradivoButton";
+            this.dodajGradivoButton.Size = new System.Drawing.Size(75, 23);
+            this.dodajGradivoButton.TabIndex = 11;
+            this.dodajGradivoButton.Text = "Dodaj";
+            this.dodajGradivoButton.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 116);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Kategorija:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 90);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Založba:";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(71, 61);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(100, 20);
+            this.textBox12.TabIndex = 7;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(71, 87);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(100, 20);
+            this.textBox10.TabIndex = 9;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(8, 38);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Naslov:";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(71, 35);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 20);
+            this.textBox11.TabIndex = 5;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Avtor:";
+            // 
             // dodajClanaTabPage
             // 
+            this.dodajClanaTabPage.Controls.Add(this.label19);
+            this.dodajClanaTabPage.Controls.Add(this.gesloTextBox);
+            this.dodajClanaTabPage.Controls.Add(this.label18);
+            this.dodajClanaTabPage.Controls.Add(this.emailTextBox);
+            this.dodajClanaTabPage.Controls.Add(this.button1);
+            this.dodajClanaTabPage.Controls.Add(this.dateTimePicker1);
+            this.dodajClanaTabPage.Controls.Add(this.label17);
+            this.dodajClanaTabPage.Controls.Add(this.label16);
+            this.dodajClanaTabPage.Controls.Add(this.telefonTextBox);
+            this.dodajClanaTabPage.Controls.Add(this.label14);
+            this.dodajClanaTabPage.Controls.Add(this.imePriimektextBox2);
             this.dodajClanaTabPage.Location = new System.Drawing.Point(4, 22);
             this.dodajClanaTabPage.Name = "dodajClanaTabPage";
             this.dodajClanaTabPage.Size = new System.Drawing.Size(792, 424);
             this.dodajClanaTabPage.TabIndex = 4;
             this.dodajClanaTabPage.Text = "Dodaj člana";
             this.dodajClanaTabPage.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(8, 148);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Dodaj";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(89, 115);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 9;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 121);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(75, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Datum rojstva:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 40);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 13);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Telefon:";
+            // 
+            // telefonTextBox
+            // 
+            this.telefonTextBox.Location = new System.Drawing.Point(89, 37);
+            this.telefonTextBox.Name = "telefonTextBox";
+            this.telefonTextBox.Size = new System.Drawing.Size(100, 20);
+            this.telefonTextBox.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Ime in priimek:";
+            // 
+            // imePriimektextBox2
+            // 
+            this.imePriimektextBox2.Location = new System.Drawing.Point(89, 11);
+            this.imePriimektextBox2.Name = "imePriimektextBox2";
+            this.imePriimektextBox2.Size = new System.Drawing.Size(100, 20);
+            this.imePriimektextBox2.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(8, 66);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(35, 13);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "Email:";
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.Location = new System.Drawing.Point(89, 63);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(100, 20);
+            this.emailTextBox.TabIndex = 11;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 92);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "Geslo:";
+            // 
+            // gesloTextBox
+            // 
+            this.gesloTextBox.Location = new System.Drawing.Point(89, 89);
+            this.gesloTextBox.Name = "gesloTextBox";
+            this.gesloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.gesloTextBox.TabIndex = 13;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 143);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 13);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Leto izdaje:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(71, 140);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 13;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(8, 169);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(48, 13);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Založba:";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(71, 166);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 15;
+            // 
+            // kupljenoRadioButton1
+            // 
+            this.kupljenoRadioButton1.AutoSize = true;
+            this.kupljenoRadioButton1.Location = new System.Drawing.Point(71, 205);
+            this.kupljenoRadioButton1.Name = "kupljenoRadioButton1";
+            this.kupljenoRadioButton1.Size = new System.Drawing.Size(39, 17);
+            this.kupljenoRadioButton1.TabIndex = 17;
+            this.kupljenoRadioButton1.TabStop = true;
+            this.kupljenoRadioButton1.Text = "Da";
+            this.kupljenoRadioButton1.UseVisualStyleBackColor = true;
+            // 
+            // kupljenoRadioButton2
+            // 
+            this.kupljenoRadioButton2.AutoSize = true;
+            this.kupljenoRadioButton2.Location = new System.Drawing.Point(116, 205);
+            this.kupljenoRadioButton2.Name = "kupljenoRadioButton2";
+            this.kupljenoRadioButton2.Size = new System.Drawing.Size(39, 17);
+            this.kupljenoRadioButton2.TabIndex = 18;
+            this.kupljenoRadioButton2.TabStop = true;
+            this.kupljenoRadioButton2.Text = "Ne";
+            this.kupljenoRadioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(8, 205);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(51, 13);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Kupljeno:";
             // 
             // MainForm
             // 
@@ -108,6 +692,19 @@ namespace LibraryProject
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.tabControl1.ResumeLayout(false);
+            this.ClaniTabPage.ResumeLayout(false);
+            this.ClaniTabPage.PerformLayout();
+            this.vraciloIzposojaTabPage.ResumeLayout(false);
+            this.vraciloIzposojaTabPage.PerformLayout();
+            this.iskanjeGroupBox.ResumeLayout(false);
+            this.iskanjeGroupBox.PerformLayout();
+            this.iskanjeGradivaTabPage.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.dodajGradivoTabPage.ResumeLayout(false);
+            this.dodajGradivoTabPage.PerformLayout();
+            this.dodajClanaTabPage.ResumeLayout(false);
+            this.dodajClanaTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -120,5 +717,61 @@ namespace LibraryProject
         private System.Windows.Forms.TabPage iskanjeGradivaTabPage;
         private System.Windows.Forms.TabPage dodajGradivoTabPage;
         private System.Windows.Forms.TabPage dodajClanaTabPage;
+        private System.Windows.Forms.ListBox claniListBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox imePriimekTextBox;
+        private System.Windows.Forms.Button iskanjeButton;
+        private System.Windows.Forms.ListBox izposojenoGradivoListBox;
+        private System.Windows.Forms.Label imePriimekLabel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox iskanjeGroupBox;
+        private System.Windows.Forms.ListBox vsoGradivoListBox;
+        private System.Windows.Forms.Button izposodiGradivoButton;
+        private System.Windows.Forms.Button vrniGradivoButton;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ListBox gradivoListBox;
+        private System.Windows.Forms.Button isciButton;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button dodajGradivoButton;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox imePriimektextBox2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox telefonTextBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox gesloTextBox;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.RadioButton kupljenoRadioButton2;
+        private System.Windows.Forms.RadioButton kupljenoRadioButton1;
     }
 }

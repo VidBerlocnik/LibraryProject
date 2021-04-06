@@ -16,5 +16,19 @@ namespace LibraryProject
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            loadUserList();
+        }
+
+        private void loadUserList()
+        {
+            List<string> uporaniki = Database.izberiVseUporabnike();
+            foreach (var item in uporaniki)
+            {
+                claniListBox.Items.Add(item);
+            }
+        }
     }
 }

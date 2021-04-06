@@ -9,12 +9,51 @@ namespace LibraryProject
 {
     class Database
     {
-        private SQLiteConnection conn;
+        private static string conn = "data source=library.db";
 
         //Constructor
-        public Database()
+
+        public static List<string> izberiVseUporabnike()
         {
-            conn = new SQLiteConnection("data source=items.db");
+            List<string> seznam = new List<string>();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT ime, priimek FROM uporabniki", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ime = reader.GetString(0);
+                    string priimek = reader.GetString(1);
+                    seznam.Add(ime + ", " + priimek);
+                    //listBoxOrdinacije.Items.Add(ime + " | " + naslov + ", " + kraj);
+                    //comboBoxOrdinacija.Items.Add(ime + " | " + naslov + ", " + kraj);
+                }
+                con.Close();
+            }
+            return seznam;
+        }
+
+        //Izpis podatkov za izposojo in vračilo
+        public static List<string> izposojaVracilo()
+        {
+            List<string> seznam = new List<string>();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT ime, priimek FROM uporabniki", con); //TODO: change SQL
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ime = reader.GetString(0);
+                    string priimek = reader.GetString(1);
+                    seznam.Add(ime + ", " + priimek);
+                    //listBoxOrdinacije.Items.Add(ime + " | " + naslov + ", " + kraj);
+                    //comboBoxOrdinacija.Items.Add(ime + " | " + naslov + ", " + kraj);
+                }
+                con.Close();
+            }
+            return seznam;
         }
     }
 }

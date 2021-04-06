@@ -150,6 +150,7 @@ namespace LibraryProject
             this.claniListBox.Name = "claniListBox";
             this.claniListBox.Size = new System.Drawing.Size(522, 444);
             this.claniListBox.TabIndex = 2;
+            this.claniListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.claniListBox_MouseDoubleClick);
             // 
             // label1
             // 

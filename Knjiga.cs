@@ -14,6 +14,7 @@ namespace LibraryProject
         public bool izgubljena { get; set; }
         public bool trgovina { get; set; }
         public string opombe { get; set; }
+        //TODO: add author class proprety
 
         public Knjiga()
         {
@@ -33,6 +34,11 @@ namespace LibraryProject
             this.id = id;
             this.naslov = naslov;
             this.leto_izdaje = leto_izdaje;
+        }
+
+        public override string ToString()
+        {
+            return this.naslov + " ; " + leto_izdaje; //TODO: update so it returns author as well
         }
     }
 }

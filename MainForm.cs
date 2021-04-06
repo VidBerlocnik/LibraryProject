@@ -12,6 +12,7 @@ namespace LibraryProject
 {
     public partial class MainForm : Form
     {
+        int uporabnik_id = -1;
         public MainForm()
         {
             InitializeComponent();
@@ -24,10 +25,29 @@ namespace LibraryProject
 
         private void loadUserList()
         {
-            List<string> uporaniki = Database.izberiVseUporabnike();
-            foreach (var item in uporaniki)
+            List<Uporabniki> uporabniki = Database.izberiVseUporabnike();
+            foreach (Uporabniki uporabnik in uporabniki)
             {
-                claniListBox.Items.Add(item);
+                claniListBox.Items.Add(uporabnik);
+            }
+        }
+
+        private void claniListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (claniListBox.SelectedIndex != -1)
+            {
+                Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
+                imePriimekLabel.Text = uporabnik.ime + " " + uporabnik.priimek;
+                uporabnik_id = uporabnik.id;
+            }
+        }
+
+        private void izposojenoListBoxUpdate()
+        {
+            List<Knjiga> knjige = Database.izpisIzposojenegaGradiva(uporabnik_id);
+            foreach (Knjiga knjiga in knjige)
+            {
+                izposojenoGradivoListBox.Items.Add(knjiga);
             }
         }
     }

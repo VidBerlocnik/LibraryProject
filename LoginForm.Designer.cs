@@ -77,6 +77,7 @@ namespace LibraryProject
             this.registracijaButton.TabIndex = 4;
             this.registracijaButton.Text = "Registracija";
             this.registracijaButton.UseVisualStyleBackColor = true;
+            this.registracijaButton.Click += new System.EventHandler(this.registracijaButton_Click);
             // 
             // prijavaButton
             // 
@@ -86,6 +87,7 @@ namespace LibraryProject
             this.prijavaButton.TabIndex = 5;
             this.prijavaButton.Text = "Prijava";
             this.prijavaButton.UseVisualStyleBackColor = true;
+            this.prijavaButton.Click += new System.EventHandler(this.prijavaButton_Click);
             // 
             // LoginForm
             // 

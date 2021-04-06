@@ -55,5 +55,27 @@ namespace LibraryProject
             }
             return seznam;
         }
+
+        //Avtentikacija podatkov za prijavo uporabnika
+        public static bool Prijava(string uporabniskoIme, string geslo)
+        {
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT * FROM admin WHERE(uporabniskoIme = '" + uporabniskoIme + "') AND (geslo = '" + geslo + "');", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    con.Close();
+                    return true;
+                }
+                else
+                {
+                    con.Close();
+                    return false;
+                }
+            }
+        }
     }
 }

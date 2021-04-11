@@ -32,6 +32,27 @@ namespace LibraryProject
             return seznam;
         }
 
+        //Vrne seznam vseh uporabnikov, ki v imenu ali priimku vsebujejo vnešene znake
+        public static List<Uporabniki> IsciVseUporabnike(string filter)
+        {
+            List<Uporabniki> seznam = new List<Uporabniki>();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki WHERE ime LIKE '%" + filter + "%' OR priimek LIKE '%" + filter + "%';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string ime = reader.GetString(1);
+                    string priimek = reader.GetString(2);
+                    seznam.Add(new Uporabniki(id, ime, priimek));
+                }
+                con.Close();
+            }
+            return seznam;
+        }
+
         //Vrne seznam izposojenega gradiva od uporabnika
         public static List<Knjiga> izpisIzposojenegaGradiva(int uporabnik_id)
         {

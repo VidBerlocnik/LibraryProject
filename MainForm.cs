@@ -51,5 +51,27 @@ namespace LibraryProject
                 izposojenoGradivoListBox.Items.Add(knjiga);
             }
         }
+
+        private void imePriimekTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (imePriimekTextBox.Text != "")
+            {
+                List<Uporabniki> uporabniki = Database.IsciVseUporabnike(imePriimekTextBox.Text);
+                claniListBox.Items.Clear();
+                foreach (Uporabniki uporabnik in uporabniki)
+                {
+                    claniListBox.Items.Add(uporabnik);
+                }
+            }
+            else
+            {
+                List<Uporabniki> uporabniki = Database.izberiVseUporabnike();
+                claniListBox.Items.Clear();
+                foreach (Uporabniki uporabnik in uporabniki)
+                {
+                    claniListBox.Items.Add(uporabnik);
+                }
+            }
+        }
     }
 }

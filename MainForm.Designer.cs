@@ -169,6 +169,7 @@ namespace LibraryProject
             this.imePriimekTextBox.Name = "imePriimekTextBox";
             this.imePriimekTextBox.Size = new System.Drawing.Size(148, 26);
             this.imePriimekTextBox.TabIndex = 0;
+            this.imePriimekTextBox.TextChanged += new System.EventHandler(this.imePriimekTextBox_TextChanged);
             // 
             // vraciloIzposojaTabPage
             // 

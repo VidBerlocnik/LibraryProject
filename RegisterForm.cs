@@ -26,11 +26,12 @@ namespace LibraryProject
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            string imePriimek = imePriimekTextBox.Text;
+            string ime = imeTextBox.Text;
+            string priimek = priimekTextBox.Text;
             string uporabniskoIme = uporabniskoImeTextBox.Text;
             string geslo = gesloTextBox.Text;
 
-            Database.Registracija(imePriimek, uporabniskoIme, geslo);
+            Database.Registracija(ime, priimek, uporabniskoIme, geslo);
         }
     }
 }

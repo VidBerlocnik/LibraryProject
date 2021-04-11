@@ -48,12 +48,48 @@ namespace LibraryProject
                     string ime = reader.GetString(0);
                     string priimek = reader.GetString(1);
                     seznam.Add(ime + ", " + priimek);
-                    //listBoxOrdinacije.Items.Add(ime + " | " + naslov + ", " + kraj);
-                    //comboBoxOrdinacija.Items.Add(ime + " | " + naslov + ", " + kraj);
                 }
                 con.Close();
             }
             return seznam;
+        }
+
+        //Doda novega člana
+        public static void dodajClana(string ime, string priimek, string telefon, string naslov, string email, string opombe)
+        {
+            try
+            {
+                //Spremeni vse empty strings v null
+                if (telefon.Trim() == "")
+                {
+                    telefon = null;
+                }
+                if (naslov.Trim() == "")
+                {
+                    naslov = null;
+                }
+                if (email.Trim() == "")
+                {
+                    email = null;
+                }
+                if (opombe.Trim() == "")
+                {
+                    opombe = null;
+                }
+
+                using (SQLiteConnection con = new SQLiteConnection(conn))
+                {
+                    con.Open();
+                    SQLiteCommand com = new SQLiteCommand("INSERT INTO uporabniki (ime, priimek, telefon, naslov, email, opombe) VALUES ('" + ime + "', '" + priimek + "', '" + telefon + "', '" + naslov + "', '" + email + "', '" + opombe + "',)", con);
+                    com.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("Napaka pri dodajanju novega člana");
+            }
+            
         }
     }
 }

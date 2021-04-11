@@ -29,29 +29,29 @@ namespace LibraryProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.nameTextBox = new System.Windows.Forms.TextBox();
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.imePriimekTextBox = new System.Windows.Forms.TextBox();
+            this.uporabniskoImeTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.gesloTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // nameTextBox
+            // imePriimekTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(107, 13);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nameTextBox.TabIndex = 0;
+            this.imePriimekTextBox.Location = new System.Drawing.Point(107, 13);
+            this.imePriimekTextBox.Name = "imePriimekTextBox";
+            this.imePriimekTextBox.Size = new System.Drawing.Size(100, 20);
+            this.imePriimekTextBox.TabIndex = 0;
             // 
-            // usernameTextBox
+            // uporabniskoImeTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(107, 39);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usernameTextBox.TabIndex = 1;
+            this.uporabniskoImeTextBox.Location = new System.Drawing.Point(107, 39);
+            this.uporabniskoImeTextBox.Name = "uporabniskoImeTextBox";
+            this.uporabniskoImeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.uporabniskoImeTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -80,12 +80,12 @@ namespace LibraryProject
             this.label3.TabIndex = 5;
             this.label3.Text = "Geslo:";
             // 
-            // passwordTextBox
+            // gesloTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(107, 65);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 4;
+            this.gesloTextBox.Location = new System.Drawing.Point(107, 65);
+            this.gesloTextBox.Name = "gesloTextBox";
+            this.gesloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.gesloTextBox.TabIndex = 4;
             // 
             // loginButton
             // 
@@ -95,6 +95,7 @@ namespace LibraryProject
             this.loginButton.TabIndex = 6;
             this.loginButton.Text = "Prijava";
             this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // registerButton
             // 
@@ -104,6 +105,7 @@ namespace LibraryProject
             this.registerButton.TabIndex = 7;
             this.registerButton.Text = "Registracija";
             this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // RegisterForm
             // 
@@ -113,11 +115,11 @@ namespace LibraryProject
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.gesloTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.usernameTextBox);
-            this.Controls.Add(this.nameTextBox);
+            this.Controls.Add(this.uporabniskoImeTextBox);
+            this.Controls.Add(this.imePriimekTextBox);
             this.Name = "RegisterForm";
             this.Text = "RegisterForm";
             this.ResumeLayout(false);
@@ -127,12 +129,12 @@ namespace LibraryProject
 
         #endregion
 
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox imePriimekTextBox;
+        private System.Windows.Forms.TextBox uporabniskoImeTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox gesloTextBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
     }

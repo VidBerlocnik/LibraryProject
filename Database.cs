@@ -80,10 +80,12 @@ namespace LibraryProject
                 using (SQLiteConnection con = new SQLiteConnection(conn))
                 {
                     con.Open();
-                    SQLiteCommand com = new SQLiteCommand("INSERT INTO uporabniki (ime, priimek, telefon, naslov, email, opombe) VALUES ('" + ime + "', '" + priimek + "', '" + telefon + "', '" + naslov + "', '" + email + "', '" + opombe + "',)", con);
+                    SQLiteCommand com = new SQLiteCommand("INSERT INTO uporabniki (ime, priimek, telefon, naslov, email, opombe) VALUES ('" + ime + "', '" + priimek + "', '" + telefon + "', '" + naslov + "', '" + email + "', '" + opombe + "');", con);
                     com.ExecuteNonQuery();
                     con.Close();
                 }
+
+                System.Windows.Forms.MessageBox.Show("Uporabnik uspešno dodan!");
             }
             catch (Exception)
             {

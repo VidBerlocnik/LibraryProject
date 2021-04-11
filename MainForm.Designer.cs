@@ -737,6 +737,7 @@ namespace LibraryProject
             this.dodajClanaButton.TabIndex = 10;
             this.dodajClanaButton.Text = "Dodaj";
             this.dodajClanaButton.UseVisualStyleBackColor = true;
+            this.dodajClanaButton.Click += new System.EventHandler(this.dodajClanaButton_Click);
             // 
             // label16
             // 

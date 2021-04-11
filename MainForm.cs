@@ -39,6 +39,7 @@ namespace LibraryProject
                 Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
                 imePriimekLabel.Text = uporabnik.ime + " " + uporabnik.priimek;
                 uporabnik_id = uporabnik.id;
+                tabControl1.SelectedTab = tabControl1.TabPages["vraciloIzposojaTabPage"];
             }
         }
 

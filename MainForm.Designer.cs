@@ -79,17 +79,19 @@ namespace LibraryProject
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dodajClanaTabPage = new System.Windows.Forms.TabPage();
+            this.opombeRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.naslovTextBox = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.priimekTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.gesloTextBox = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label17 = new System.Windows.Forms.Label();
+            this.dodajClanaButton = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.telefonTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.imePriimektextBox2 = new System.Windows.Forms.TextBox();
+            this.imeTextBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -622,17 +624,19 @@ namespace LibraryProject
             // 
             // dodajClanaTabPage
             // 
+            this.dodajClanaTabPage.Controls.Add(this.opombeRichTextBox);
+            this.dodajClanaTabPage.Controls.Add(this.label23);
+            this.dodajClanaTabPage.Controls.Add(this.naslovTextBox);
+            this.dodajClanaTabPage.Controls.Add(this.label22);
+            this.dodajClanaTabPage.Controls.Add(this.priimekTextBox);
             this.dodajClanaTabPage.Controls.Add(this.label19);
-            this.dodajClanaTabPage.Controls.Add(this.gesloTextBox);
             this.dodajClanaTabPage.Controls.Add(this.label18);
             this.dodajClanaTabPage.Controls.Add(this.emailTextBox);
-            this.dodajClanaTabPage.Controls.Add(this.button1);
-            this.dodajClanaTabPage.Controls.Add(this.dateTimePicker1);
-            this.dodajClanaTabPage.Controls.Add(this.label17);
+            this.dodajClanaTabPage.Controls.Add(this.dodajClanaButton);
             this.dodajClanaTabPage.Controls.Add(this.label16);
             this.dodajClanaTabPage.Controls.Add(this.telefonTextBox);
             this.dodajClanaTabPage.Controls.Add(this.label14);
-            this.dodajClanaTabPage.Controls.Add(this.imePriimektextBox2);
+            this.dodajClanaTabPage.Controls.Add(this.imeTextBox2);
             this.dodajClanaTabPage.Location = new System.Drawing.Point(4, 29);
             this.dodajClanaTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dodajClanaTabPage.Name = "dodajClanaTabPage";
@@ -641,28 +645,65 @@ namespace LibraryProject
             this.dodajClanaTabPage.Text = "Dodaj člana";
             this.dodajClanaTabPage.UseVisualStyleBackColor = true;
             // 
+            // opombeRichTextBox
+            // 
+            this.opombeRichTextBox.Location = new System.Drawing.Point(134, 195);
+            this.opombeRichTextBox.MaxLength = 1000;
+            this.opombeRichTextBox.Name = "opombeRichTextBox";
+            this.opombeRichTextBox.Size = new System.Drawing.Size(400, 157);
+            this.opombeRichTextBox.TabIndex = 19;
+            this.opombeRichTextBox.Text = "";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(12, 130);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 20);
+            this.label23.TabIndex = 18;
+            this.label23.Text = "Naslov: ";
+            // 
+            // naslovTextBox
+            // 
+            this.naslovTextBox.Location = new System.Drawing.Point(134, 125);
+            this.naslovTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.naslovTextBox.Name = "naslovTextBox";
+            this.naslovTextBox.Size = new System.Drawing.Size(148, 26);
+            this.naslovTextBox.TabIndex = 17;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(12, 58);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(68, 20);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Priimek: ";
+            // 
+            // priimekTextBox
+            // 
+            this.priimekTextBox.Location = new System.Drawing.Point(134, 53);
+            this.priimekTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.priimekTextBox.Name = "priimekTextBox";
+            this.priimekTextBox.Size = new System.Drawing.Size(148, 26);
+            this.priimekTextBox.TabIndex = 15;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 142);
+            this.label19.Location = new System.Drawing.Point(12, 195);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(55, 20);
+            this.label19.Size = new System.Drawing.Size(78, 20);
             this.label19.TabIndex = 14;
-            this.label19.Text = "Geslo:";
-            // 
-            // gesloTextBox
-            // 
-            this.gesloTextBox.Location = new System.Drawing.Point(134, 137);
-            this.gesloTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gesloTextBox.Name = "gesloTextBox";
-            this.gesloTextBox.Size = new System.Drawing.Size(148, 26);
-            this.gesloTextBox.TabIndex = 13;
+            this.label19.Text = "Opombe: ";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 102);
+            this.label18.Location = new System.Drawing.Point(12, 166);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 20);
@@ -671,44 +712,27 @@ namespace LibraryProject
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(134, 97);
+            this.emailTextBox.Location = new System.Drawing.Point(134, 161);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(148, 26);
             this.emailTextBox.TabIndex = 11;
             // 
-            // button1
+            // dodajClanaButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 228);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 35);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Dodaj";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(134, 177);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
-            this.dateTimePicker1.TabIndex = 9;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 186);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 20);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Datum rojstva:";
+            this.dodajClanaButton.Location = new System.Drawing.Point(16, 360);
+            this.dodajClanaButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dodajClanaButton.Name = "dodajClanaButton";
+            this.dodajClanaButton.Size = new System.Drawing.Size(112, 35);
+            this.dodajClanaButton.TabIndex = 10;
+            this.dodajClanaButton.Text = "Dodaj";
+            this.dodajClanaButton.UseVisualStyleBackColor = true;
+            this.dodajClanaButton.Click += new System.EventHandler(this.dodajClanaButton_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 62);
+            this.label16.Location = new System.Drawing.Point(12, 94);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(66, 20);
@@ -717,7 +741,7 @@ namespace LibraryProject
             // 
             // telefonTextBox
             // 
-            this.telefonTextBox.Location = new System.Drawing.Point(134, 57);
+            this.telefonTextBox.Location = new System.Drawing.Point(134, 89);
             this.telefonTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.telefonTextBox.Name = "telefonTextBox";
             this.telefonTextBox.Size = new System.Drawing.Size(148, 26);
@@ -729,17 +753,17 @@ namespace LibraryProject
             this.label14.Location = new System.Drawing.Point(12, 22);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(110, 20);
+            this.label14.Size = new System.Drawing.Size(44, 20);
             this.label14.TabIndex = 3;
-            this.label14.Text = "Ime in priimek:";
+            this.label14.Text = "Ime: ";
             // 
-            // imePriimektextBox2
+            // imeTextBox2
             // 
-            this.imePriimektextBox2.Location = new System.Drawing.Point(134, 17);
-            this.imePriimektextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.imePriimektextBox2.Name = "imePriimektextBox2";
-            this.imePriimektextBox2.Size = new System.Drawing.Size(148, 26);
-            this.imePriimektextBox2.TabIndex = 2;
+            this.imeTextBox2.Location = new System.Drawing.Point(134, 17);
+            this.imeTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.imeTextBox2.Name = "imeTextBox2";
+            this.imeTextBox2.Size = new System.Drawing.Size(148, 26);
+            this.imeTextBox2.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -815,14 +839,11 @@ namespace LibraryProject
         private System.Windows.Forms.Button dodajGradivoButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox imePriimektextBox2;
+        private System.Windows.Forms.TextBox imeTextBox2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox telefonTextBox;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button dodajClanaButton;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox gesloTextBox;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label label20;
@@ -832,5 +853,10 @@ namespace LibraryProject
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.RadioButton kupljenoRadioButton2;
         private System.Windows.Forms.RadioButton kupljenoRadioButton1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox priimekTextBox;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox naslovTextBox;
+        private System.Windows.Forms.RichTextBox opombeRichTextBox;
     }
 }

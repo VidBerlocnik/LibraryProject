@@ -73,5 +73,17 @@ namespace LibraryProject
                 }
             }
         }
+
+        private void dodajClanaButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Database.dodajClana(imeTextBox2.Text, priimekTextBox.Text, telefonTextBox.Text, naslovTextBox.Text, emailTextBox.Text, opombeRichTextBox.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Napaka pri dodajanju člana!");
+            }
+        }
     }
 }

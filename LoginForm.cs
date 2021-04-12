@@ -21,7 +21,7 @@ namespace LibraryProject
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
-            Close();
+            Hide();
         }
 
         private void prijavaButton_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace LibraryProject
             {
                 MainForm mainForm = new MainForm();
                 mainForm.Show();
-                Close();
+                Hide();
             }
             else
             {

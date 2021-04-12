@@ -16,5 +16,26 @@ namespace LibraryProject
         {
             InitializeComponent();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            Hide();
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            string ime = imeTextBox.Text;
+            string priimek = priimekTextBox.Text;
+            string uporabniskoIme = uporabniskoImeTextBox.Text;
+            string geslo = gesloTextBox.Text;
+
+            Database.Registracija(ime, priimek, uporabniskoIme, geslo);
+
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            Hide();
+        }
     }
 }

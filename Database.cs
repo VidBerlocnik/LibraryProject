@@ -136,5 +136,17 @@ namespace LibraryProject
                 }
             }
         }
+
+        public static void Registracija(string ime, string priimek, string uporabniskoIme, string geslo)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("INSERT INTO admin(ime, priimek, uporabniskoIme, geslo) " +
+                    "VALUES('" + ime + "', '" + priimek + "', '" + uporabniskoIme + "', '" + geslo + "'); ", con);
+                //SQLiteDataReader reader = com.ExecuteReader();
+                com.ExecuteNonQuery();
+            }
+        }
     }
 }

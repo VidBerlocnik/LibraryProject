@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="Gradivo.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

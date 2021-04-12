@@ -16,6 +16,8 @@ namespace LibraryProject
         public string ImeAvtorja { get; set; }
         public string PriimekAvtorja { get; set; }
         public string ImeZalozba { get; set; }
+        public bool Kupljeno { get; set; }
+        public bool Izgubljena { get; set; }
 
         //Constructor
         public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek, string zalozba)
@@ -26,6 +28,7 @@ namespace LibraryProject
             ImeAvtorja = ime;
             PriimekAvtorja = priimek;
             ImeZalozba = zalozba;
+            Izgubljena = false;
         }
         public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek)
         {
@@ -35,6 +38,18 @@ namespace LibraryProject
             ImeAvtorja = ime;
             PriimekAvtorja = priimek;
             ImeZalozba = null;
+            Izgubljena = false;
+        }
+        public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek, string zalozba, bool kupljeno)
+        {
+            Id = id;
+            Naslov = naslov;
+            LetoIzdaje = letoIzdaje;
+            ImeAvtorja = ime;
+            PriimekAvtorja = priimek;
+            ImeZalozba = zalozba;
+            Kupljeno = kupljeno;
+            Izgubljena = false;
         }
 
         //functions

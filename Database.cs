@@ -122,7 +122,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT * FROM admin WHERE(uporabniskoIme = '" + uporabniskoIme + "') AND (geslo = '" + geslo + "');", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT * FROM admins WHERE(uporabniskoIme = '" + uporabniskoIme + "') AND (geslo = '" + geslo + "');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -142,7 +142,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("INSERT INTO admin(ime, priimek, uporabniskoIme, geslo) " +
+                SQLiteCommand com = new SQLiteCommand("INSERT INTO admins(ime, priimek, uporabniskoIme, geslo) " +
                     "VALUES('" + ime + "', '" + priimek + "', '" + uporabniskoIme + "', '" + geslo + "'); ", con);
                 //SQLiteDataReader reader = com.ExecuteReader();
                 com.ExecuteNonQuery();

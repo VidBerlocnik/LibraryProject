@@ -286,5 +286,24 @@ namespace LibraryProject
             }
         }
 
+        public static List<Zalozba> VrniVseZalozbe()
+        {
+            List<Zalozba> seznam = new List<Zalozba>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime FROM zalozbe;", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string ime = reader.GetString(1);
+                    seznam.Add(new Zalozba(id, ime));
+                }
+                con.Close();
+            }
+            return seznam;
+        }
     }
 }

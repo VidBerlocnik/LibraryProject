@@ -66,7 +66,6 @@ namespace LibraryProject
                 {
                     string ime = reader.GetString(0);
                     string priimek = reader.GetString(1);
-                    seznam.Add(ime + ", " + priimek);
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
@@ -114,7 +113,8 @@ namespace LibraryProject
             {
                 System.Windows.Forms.MessageBox.Show("Napaka pri dodajanju novega člana");
             }
-            
+        }
+
         //Avtentikacija podatkov za prijavo uporabnika
         public static bool Prijava(string uporabniskoIme, string geslo)
         {

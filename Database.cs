@@ -160,7 +160,6 @@ namespace LibraryProject
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
-                    
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
@@ -185,7 +184,6 @@ namespace LibraryProject
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
-
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
@@ -209,7 +207,29 @@ namespace LibraryProject
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
+                    int id = reader.GetInt32(0);
+                    string naslov = reader.GetString(1);
+                    string leto_izdaje = reader.GetString(2);
+                    string ime = reader.GetString(3);
+                    string priimek = reader.GetString(4);
+                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                }
+                con.Close();
+            }
+            return seznamGradiva;
+        }
+        public static List<Gradivo> FilterZalozba(string zalozbaKnjige)
+        {
+            List<Gradivo> seznamGradiva = new List<Gradivo>();
 
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM zalozbe z INNER JOIN knjige k ON z.id=k.zalozba_id INNER JOIN avtorji a ON k.avtor_id=a.id " +
+                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);

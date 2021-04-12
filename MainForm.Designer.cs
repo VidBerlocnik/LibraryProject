@@ -90,6 +90,8 @@ namespace LibraryProject
             this.telefonTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.invStTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -121,7 +123,7 @@ namespace LibraryProject
             this.ClaniTabPage.Controls.Add(this.imePriimekTextBox);
             this.ClaniTabPage.Location = new System.Drawing.Point(4, 22);
             this.ClaniTabPage.Name = "ClaniTabPage";
-            this.ClaniTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ClaniTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.ClaniTabPage.Size = new System.Drawing.Size(792, 424);
             this.ClaniTabPage.TabIndex = 0;
             this.ClaniTabPage.Text = "Člani";
@@ -163,7 +165,7 @@ namespace LibraryProject
             this.vraciloIzposojaTabPage.Controls.Add(this.izposojenoGradivoListBox);
             this.vraciloIzposojaTabPage.Location = new System.Drawing.Point(4, 22);
             this.vraciloIzposojaTabPage.Name = "vraciloIzposojaTabPage";
-            this.vraciloIzposojaTabPage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.vraciloIzposojaTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.vraciloIzposojaTabPage.Size = new System.Drawing.Size(792, 424);
             this.vraciloIzposojaTabPage.TabIndex = 1;
             this.vraciloIzposojaTabPage.Text = "Vracilo/izposoja";
@@ -307,7 +309,7 @@ namespace LibraryProject
             // 
             // isciButton
             // 
-            this.isciButton.Location = new System.Drawing.Point(8, 155);
+            this.isciButton.Location = new System.Drawing.Point(8, 181);
             this.isciButton.Name = "isciButton";
             this.isciButton.Size = new System.Drawing.Size(75, 23);
             this.isciButton.TabIndex = 15;
@@ -317,15 +319,17 @@ namespace LibraryProject
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.zalozbaTextBox);
+            this.groupBox1.Controls.Add(this.invStTextBox);
             this.groupBox1.Controls.Add(this.naslovTextBox2);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.avtorTextBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 101);
+            this.groupBox1.Size = new System.Drawing.Size(173, 127);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iskanje";
@@ -333,7 +337,7 @@ namespace LibraryProject
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 74);
+            this.label7.Location = new System.Drawing.Point(6, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 10;
@@ -341,14 +345,14 @@ namespace LibraryProject
             // 
             // zalozbaTextBox
             // 
-            this.zalozbaTextBox.Location = new System.Drawing.Point(58, 71);
+            this.zalozbaTextBox.Location = new System.Drawing.Point(60, 97);
             this.zalozbaTextBox.Name = "zalozbaTextBox";
             this.zalozbaTextBox.Size = new System.Drawing.Size(100, 20);
             this.zalozbaTextBox.TabIndex = 9;
             // 
             // naslovTextBox2
             // 
-            this.naslovTextBox2.Location = new System.Drawing.Point(58, 19);
+            this.naslovTextBox2.Location = new System.Drawing.Point(60, 45);
             this.naslovTextBox2.Name = "naslovTextBox2";
             this.naslovTextBox2.Size = new System.Drawing.Size(100, 20);
             this.naslovTextBox2.TabIndex = 5;
@@ -356,7 +360,7 @@ namespace LibraryProject
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 48);
+            this.label8.Location = new System.Drawing.Point(6, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 8;
@@ -365,7 +369,7 @@ namespace LibraryProject
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 22);
+            this.label9.Location = new System.Drawing.Point(6, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 6;
@@ -373,7 +377,7 @@ namespace LibraryProject
             // 
             // avtorTextBox
             // 
-            this.avtorTextBox.Location = new System.Drawing.Point(58, 45);
+            this.avtorTextBox.Location = new System.Drawing.Point(60, 71);
             this.avtorTextBox.Name = "avtorTextBox";
             this.avtorTextBox.Size = new System.Drawing.Size(100, 20);
             this.avtorTextBox.TabIndex = 7;
@@ -573,7 +577,7 @@ namespace LibraryProject
             // opombeRichTextBox
             // 
             this.opombeRichTextBox.Location = new System.Drawing.Point(89, 127);
-            this.opombeRichTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.opombeRichTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.opombeRichTextBox.MaxLength = 1000;
             this.opombeRichTextBox.Name = "opombeRichTextBox";
             this.opombeRichTextBox.Size = new System.Drawing.Size(268, 103);
@@ -679,6 +683,22 @@ namespace LibraryProject
             this.imeTextBox2.Size = new System.Drawing.Size(100, 20);
             this.imeTextBox2.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Inv. st:";
+            // 
+            // invStTextBox
+            // 
+            this.invStTextBox.Location = new System.Drawing.Point(60, 19);
+            this.invStTextBox.Name = "invStTextBox";
+            this.invStTextBox.Size = new System.Drawing.Size(100, 20);
+            this.invStTextBox.TabIndex = 11;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,5 +789,7 @@ namespace LibraryProject
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox naslovTextBox;
         private System.Windows.Forms.RichTextBox opombeRichTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox invStTextBox;
     }
 }

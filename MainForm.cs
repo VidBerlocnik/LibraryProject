@@ -85,5 +85,18 @@ namespace LibraryProject
                 MessageBox.Show("Napaka pri dodajanju člana!");
             }
         }
+
+        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.TabIndex == tabControl1.TabPages.IndexOf(tabControl1.TabPages["vraciloIzposojaTabPage"]))
+            {
+                izposojenoGradivoListBox.Items.Clear();
+                List<Knjiga> izposojenoGradivo = Database.izpisIzposojenegaGradiva(uporabnik_id);
+                foreach (Knjiga knjiga in izposojenoGradivo)
+                {
+                    izposojenoGradivoListBox.Items.Add(knjiga);
+                }
+            }
+        }
     }
 }

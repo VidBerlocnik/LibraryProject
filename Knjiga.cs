@@ -14,31 +14,33 @@ namespace LibraryProject
         public bool izgubljena { get; set; }
         public bool trgovina { get; set; }
         public string opombe { get; set; }
-        //TODO: add author class proprety
+        public Avtor avtor { get; set; }
 
         public Knjiga()
         {
         }
 
-        public Knjiga(int id, string naslov, string leto_izdaje, bool izgubljena, bool trgovina)
+        public Knjiga(int id, string naslov, string leto_izdaje, bool izgubljena, bool trgovina, Avtor avtor)
         {
             this.id = id;
             this.naslov = naslov;
             this.leto_izdaje = leto_izdaje;
             this.izgubljena = izgubljena;
             this.trgovina = trgovina;
+            this.avtor = avtor;
         }
 
-        public Knjiga(int id, string naslov, string leto_izdaje)
+        public Knjiga(int id, string naslov, string leto_izdaje, Avtor avtor)
         {
             this.id = id;
             this.naslov = naslov;
             this.leto_izdaje = leto_izdaje;
+            this.avtor = avtor;
         }
 
         public override string ToString()
         {
-            return this.naslov + " ; " + leto_izdaje; //TODO: update so it returns author as well
+            return this.naslov + " ; " + leto_izdaje + " ; " + avtor.ime + " " + avtor.priimek;
         }
     }
 }

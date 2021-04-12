@@ -101,7 +101,7 @@ namespace LibraryProject
             if(naslovTextBox2.Text.Length > 0)
             {
                 gradivoListBox.Items.Clear();
-                List<Gradivo> seznam = Database.FilterNaslov;
+                List<Gradivo> seznam = Database.FilterNaslov(naslovTextBox2.Text);
                 foreach (Gradivo gradivo in seznam)
                 {
                     gradivoListBox.Items.Add(gradivo);
@@ -110,7 +110,7 @@ namespace LibraryProject
             else if(avtorTextBox.Text.Length > 0)
             {
                 gradivoListBox.Items.Clear();
-                List<Gradivo> seznam = Database.FilterAvtor;
+                List<Gradivo> seznam = Database.FilterAvtor(avtorTextBox.Text);
                 foreach (Gradivo gradivo in seznam)
                 {
                     gradivoListBox.Items.Add(gradivo);
@@ -119,7 +119,16 @@ namespace LibraryProject
             else if(zalozbaTextBox.Text.Length > 0)
             {
                 gradivoListBox.Items.Clear();
-                List<Gradivo> seznam = Database.FilterZalozba;
+                List<Gradivo> seznam = Database.FilterZalozba(zalozbaTextBox.Text);
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
+            }
+            else if(invStTextBox.Text.Length > 0)
+            {
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterInvSt(invStTextBox.Text);
                 foreach (Gradivo gradivo in seznam)
                 {
                     gradivoListBox.Items.Add(gradivo);

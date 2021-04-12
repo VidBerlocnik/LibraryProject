@@ -16,6 +16,7 @@ namespace LibraryProject
         public MainForm()
         {
             InitializeComponent();
+            kupljenoRadioButton1.Checked = true;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -153,8 +154,16 @@ namespace LibraryProject
                                 string ime = avtorr[0].Trim();
                                 string priimek = avtorr[1].Trim();
 
-                                Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaGradivoTextBox.Text);
-                                Database.DodajGradivo(gradivo);
+                                if (kupljenoRadioButton1.Checked)
+                                {
+                                    Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaGradivoTextBox.Text, true);
+                                    Database.DodajGradivo(gradivo);
+                                }
+                                else if (kupljenoRadioButton2.Checked)
+                                {
+                                    Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaGradivoTextBox.Text, false);
+                                    Database.DodajGradivo(gradivo);
+                                }
                             }
                         }
                     }

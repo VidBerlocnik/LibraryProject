@@ -15,6 +15,15 @@ namespace LibraryProject
         public string LetoIzdaje { get; set; }
         public string Avtor { get; set; }
 
+        //Constructor
+        public Gradivo(int id, string naslov, string letoIzdaje, string avtor)
+        {
+            Id = id;
+            Naslov = naslov;
+            LetoIzdaje = letoIzdaje;
+            Avtor = avtor;
+        }
+
         //functions
         public override string ToString()
         {

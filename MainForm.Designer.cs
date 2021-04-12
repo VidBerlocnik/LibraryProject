@@ -31,7 +31,6 @@ namespace LibraryProject
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.ClaniTabPage = new System.Windows.Forms.TabPage();
-            this.iskanjeButton = new System.Windows.Forms.Button();
             this.claniListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.imePriimekTextBox = new System.Windows.Forms.TextBox();
@@ -118,7 +117,6 @@ namespace LibraryProject
             // 
             // ClaniTabPage
             // 
-            this.ClaniTabPage.Controls.Add(this.iskanjeButton);
             this.ClaniTabPage.Controls.Add(this.claniListBox);
             this.ClaniTabPage.Controls.Add(this.label1);
             this.ClaniTabPage.Controls.Add(this.imePriimekTextBox);
@@ -131,16 +129,6 @@ namespace LibraryProject
             this.ClaniTabPage.Text = "Člani";
             this.ClaniTabPage.UseVisualStyleBackColor = true;
             // 
-            // iskanjeButton
-            // 
-            this.iskanjeButton.Location = new System.Drawing.Point(321, 14);
-            this.iskanjeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iskanjeButton.Name = "iskanjeButton";
-            this.iskanjeButton.Size = new System.Drawing.Size(112, 35);
-            this.iskanjeButton.TabIndex = 3;
-            this.iskanjeButton.Text = "Iskanje";
-            this.iskanjeButton.UseVisualStyleBackColor = true;
-            // 
             // claniListBox
             // 
             this.claniListBox.FormattingEnabled = true;
@@ -150,6 +138,7 @@ namespace LibraryProject
             this.claniListBox.Name = "claniListBox";
             this.claniListBox.Size = new System.Drawing.Size(522, 444);
             this.claniListBox.TabIndex = 2;
+            this.claniListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.claniListBox_MouseDoubleClick);
             // 
             // label1
             // 
@@ -168,6 +157,7 @@ namespace LibraryProject
             this.imePriimekTextBox.Name = "imePriimekTextBox";
             this.imePriimekTextBox.Size = new System.Drawing.Size(148, 26);
             this.imePriimekTextBox.TabIndex = 0;
+            this.imePriimekTextBox.TextChanged += new System.EventHandler(this.imePriimekTextBox_TextChanged);
             // 
             // vraciloIzposojaTabPage
             // 
@@ -790,7 +780,6 @@ namespace LibraryProject
         private System.Windows.Forms.ListBox claniListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox imePriimekTextBox;
-        private System.Windows.Forms.Button iskanjeButton;
         private System.Windows.Forms.ListBox izposojenoGradivoListBox;
         private System.Windows.Forms.Label imePriimekLabel;
         private System.Windows.Forms.Label label3;

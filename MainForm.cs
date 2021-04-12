@@ -17,6 +17,7 @@ namespace LibraryProject
         {
             InitializeComponent();
             kupljenoRadioButton1.Checked = true;
+            FillZalozbeCombobox();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -145,29 +146,37 @@ namespace LibraryProject
                 {
                     if (naslovGradivoTextBox.Text.Length > 0)
                     {
-                        if (zalozbaGradivoTextBox.Text.Length > 0)
+                        if(invStTextBox2.Text.Length > 0)
                         {
-                            if(invStTextBox2.Text.Length > 0)
-                            {
-                                string avtor = avtorGradivoTextBox.Text;
-                                string[] avtorr = avtor.Split(' ');
-                                string ime = avtorr[0].Trim();
-                                string priimek = avtorr[1].Trim();
+                            string avtor = avtorGradivoTextBox.Text;
+                            string[] avtorr = avtor.Split(' ');
+                            string ime = avtorr[0].Trim();
+                            string priimek = avtorr[1].Trim();
+                            Zalozba zalozbaa = (Zalozba)zalozbaComboBox.SelectedItem;
 
-                                if (kupljenoRadioButton1.Checked)
-                                {
-                                    Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaGradivoTextBox.Text, true);
-                                    Database.DodajGradivo(gradivo);
-                                }
-                                else if (kupljenoRadioButton2.Checked)
-                                {
-                                    Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaGradivoTextBox.Text, false);
-                                    Database.DodajGradivo(gradivo);
-                                }
+                            if (kupljenoRadioButton1.Checked)
+                            {
+                                Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaa.Id, true);
+                                Database.DodajGradivo(gradivo);
+                            }
+                            else if (kupljenoRadioButton2.Checked)
+                            {
+                                Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaa.Id, false);
+                                Database.DodajGradivo(gradivo);
                             }
                         }
                     }
                 }
+            }
+        }
+
+        public void FillZalozbeCombobox()
+        {
+            List<Zalozba> seznam = Database.VrniVseZalozbe();
+
+            foreach(Zalozba zalozba in seznam)
+            {
+                zalozbaComboBox.Items.Add(zalozba);
             }
         }
     }

@@ -62,6 +62,8 @@ namespace LibraryProject
             this.avtorTextBox = new System.Windows.Forms.TextBox();
             this.gradivoListBox = new System.Windows.Forms.ListBox();
             this.dodajGradivoTabPage = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.invStTextBox2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.kupljenoRadioButton2 = new System.Windows.Forms.RadioButton();
             this.kupljenoRadioButton1 = new System.Windows.Forms.RadioButton();
@@ -72,7 +74,6 @@ namespace LibraryProject
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.avtorGradivoTextBox = new System.Windows.Forms.TextBox();
-            this.zalozbaGradivoTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.naslovGradivoTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -90,8 +91,7 @@ namespace LibraryProject
             this.telefonTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.invStTextBox2 = new System.Windows.Forms.TextBox();
+            this.zalozbaComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -408,6 +408,7 @@ namespace LibraryProject
             // 
             // dodajGradivoTabPage
             // 
+            this.dodajGradivoTabPage.Controls.Add(this.zalozbaComboBox);
             this.dodajGradivoTabPage.Controls.Add(this.label17);
             this.dodajGradivoTabPage.Controls.Add(this.invStTextBox2);
             this.dodajGradivoTabPage.Controls.Add(this.label21);
@@ -420,7 +421,6 @@ namespace LibraryProject
             this.dodajGradivoTabPage.Controls.Add(this.label10);
             this.dodajGradivoTabPage.Controls.Add(this.label11);
             this.dodajGradivoTabPage.Controls.Add(this.avtorGradivoTextBox);
-            this.dodajGradivoTabPage.Controls.Add(this.zalozbaGradivoTextBox);
             this.dodajGradivoTabPage.Controls.Add(this.label13);
             this.dodajGradivoTabPage.Controls.Add(this.naslovGradivoTextBox);
             this.dodajGradivoTabPage.Controls.Add(this.label12);
@@ -430,6 +430,22 @@ namespace LibraryProject
             this.dodajGradivoTabPage.TabIndex = 3;
             this.dodajGradivoTabPage.Text = "Dodaj gradivo";
             this.dodajGradivoTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 12);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 13);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Inv. st:";
+            // 
+            // invStTextBox2
+            // 
+            this.invStTextBox2.Location = new System.Drawing.Point(71, 9);
+            this.invStTextBox2.Name = "invStTextBox2";
+            this.invStTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.invStTextBox2.TabIndex = 20;
             // 
             // label21
             // 
@@ -520,13 +536,6 @@ namespace LibraryProject
             this.avtorGradivoTextBox.Name = "avtorGradivoTextBox";
             this.avtorGradivoTextBox.Size = new System.Drawing.Size(100, 20);
             this.avtorGradivoTextBox.TabIndex = 7;
-            // 
-            // zalozbaGradivoTextBox
-            // 
-            this.zalozbaGradivoTextBox.Location = new System.Drawing.Point(71, 87);
-            this.zalozbaGradivoTextBox.Name = "zalozbaGradivoTextBox";
-            this.zalozbaGradivoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.zalozbaGradivoTextBox.TabIndex = 9;
             // 
             // label13
             // 
@@ -684,21 +693,13 @@ namespace LibraryProject
             this.imeTextBox2.Size = new System.Drawing.Size(100, 20);
             this.imeTextBox2.TabIndex = 2;
             // 
-            // label17
+            // zalozbaComboBox
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 12);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(39, 13);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "Inv. st:";
-            // 
-            // invStTextBox2
-            // 
-            this.invStTextBox2.Location = new System.Drawing.Point(71, 9);
-            this.invStTextBox2.Name = "invStTextBox2";
-            this.invStTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.invStTextBox2.TabIndex = 20;
+            this.zalozbaComboBox.FormattingEnabled = true;
+            this.zalozbaComboBox.Location = new System.Drawing.Point(71, 88);
+            this.zalozbaComboBox.Name = "zalozbaComboBox";
+            this.zalozbaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.zalozbaComboBox.TabIndex = 22;
             // 
             // MainForm
             // 
@@ -764,7 +765,6 @@ namespace LibraryProject
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox avtorGradivoTextBox;
-        private System.Windows.Forms.TextBox zalozbaGradivoTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox naslovGradivoTextBox;
         private System.Windows.Forms.Label label12;
@@ -792,5 +792,6 @@ namespace LibraryProject
         private System.Windows.Forms.TextBox invStTextBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox invStTextBox2;
+        private System.Windows.Forms.ComboBox zalozbaComboBox;
     }
 }

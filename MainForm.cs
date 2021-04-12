@@ -21,6 +21,7 @@ namespace LibraryProject
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadUserList();
+            loadGradivoList();
         }
 
         private void loadUserList()
@@ -83,6 +84,15 @@ namespace LibraryProject
             catch (Exception)
             {
                 MessageBox.Show("Napaka pri dodajanju člana!");
+            }
+        }
+
+        private void loadGradivoList()
+        {
+            List<Gradivo> gradiva = Database.IzberiVsoGradivo();
+            foreach (Gradivo gradivo in gradiva)
+            {
+                gradivoListBox.Items.Add(gradivo);
             }
         }
     }

@@ -52,8 +52,10 @@ namespace LibraryProject
             this.iskanjeGradivaTabPage = new System.Windows.Forms.TabPage();
             this.isciButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.zalozbaTextBox = new System.Windows.Forms.TextBox();
+            this.invStTextBox = new System.Windows.Forms.TextBox();
             this.naslovTextBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,17 +66,17 @@ namespace LibraryProject
             this.kupljenoRadioButton2 = new System.Windows.Forms.RadioButton();
             this.kupljenoRadioButton1 = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.zalozbaGradivoTextBox2 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.letoIzdajeGradivoTextBox = new System.Windows.Forms.TextBox();
+            this.kategorijaGradivoComboBox = new System.Windows.Forms.ComboBox();
             this.dodajGradivoButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.avtorGradivoTextBox = new System.Windows.Forms.TextBox();
+            this.zalozbaGradivoTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.naslovGradivoTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dodajClanaTabPage = new System.Windows.Forms.TabPage();
             this.opombeRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -90,8 +92,6 @@ namespace LibraryProject
             this.telefonTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.invStTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -334,6 +334,15 @@ namespace LibraryProject
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iskanje";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Inv. st:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -349,6 +358,13 @@ namespace LibraryProject
             this.zalozbaTextBox.Name = "zalozbaTextBox";
             this.zalozbaTextBox.Size = new System.Drawing.Size(100, 20);
             this.zalozbaTextBox.TabIndex = 9;
+            // 
+            // invStTextBox
+            // 
+            this.invStTextBox.Location = new System.Drawing.Point(60, 19);
+            this.invStTextBox.Name = "invStTextBox";
+            this.invStTextBox.Size = new System.Drawing.Size(100, 20);
+            this.invStTextBox.TabIndex = 11;
             // 
             // naslovTextBox2
             // 
@@ -396,17 +412,17 @@ namespace LibraryProject
             this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton2);
             this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton1);
             this.dodajGradivoTabPage.Controls.Add(this.label20);
-            this.dodajGradivoTabPage.Controls.Add(this.textBox13);
+            this.dodajGradivoTabPage.Controls.Add(this.zalozbaGradivoTextBox2);
             this.dodajGradivoTabPage.Controls.Add(this.label15);
-            this.dodajGradivoTabPage.Controls.Add(this.textBox9);
-            this.dodajGradivoTabPage.Controls.Add(this.comboBox1);
+            this.dodajGradivoTabPage.Controls.Add(this.letoIzdajeGradivoTextBox);
+            this.dodajGradivoTabPage.Controls.Add(this.kategorijaGradivoComboBox);
             this.dodajGradivoTabPage.Controls.Add(this.dodajGradivoButton);
             this.dodajGradivoTabPage.Controls.Add(this.label10);
             this.dodajGradivoTabPage.Controls.Add(this.label11);
-            this.dodajGradivoTabPage.Controls.Add(this.textBox12);
-            this.dodajGradivoTabPage.Controls.Add(this.textBox10);
+            this.dodajGradivoTabPage.Controls.Add(this.avtorGradivoTextBox);
+            this.dodajGradivoTabPage.Controls.Add(this.zalozbaGradivoTextBox);
             this.dodajGradivoTabPage.Controls.Add(this.label13);
-            this.dodajGradivoTabPage.Controls.Add(this.textBox11);
+            this.dodajGradivoTabPage.Controls.Add(this.naslovGradivoTextBox);
             this.dodajGradivoTabPage.Controls.Add(this.label12);
             this.dodajGradivoTabPage.Location = new System.Drawing.Point(4, 22);
             this.dodajGradivoTabPage.Name = "dodajGradivoTabPage";
@@ -455,12 +471,12 @@ namespace LibraryProject
             this.label20.TabIndex = 16;
             this.label20.Text = "Založba:";
             // 
-            // textBox13
+            // zalozbaGradivoTextBox2
             // 
-            this.textBox13.Location = new System.Drawing.Point(71, 166);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 15;
+            this.zalozbaGradivoTextBox2.Location = new System.Drawing.Point(71, 166);
+            this.zalozbaGradivoTextBox2.Name = "zalozbaGradivoTextBox2";
+            this.zalozbaGradivoTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.zalozbaGradivoTextBox2.TabIndex = 15;
             // 
             // label15
             // 
@@ -471,20 +487,20 @@ namespace LibraryProject
             this.label15.TabIndex = 14;
             this.label15.Text = "Leto izdaje:";
             // 
-            // textBox9
+            // letoIzdajeGradivoTextBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(71, 140);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 13;
+            this.letoIzdajeGradivoTextBox.Location = new System.Drawing.Point(71, 140);
+            this.letoIzdajeGradivoTextBox.Name = "letoIzdajeGradivoTextBox";
+            this.letoIzdajeGradivoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.letoIzdajeGradivoTextBox.TabIndex = 13;
             // 
-            // comboBox1
+            // kategorijaGradivoComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 113);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
+            this.kategorijaGradivoComboBox.FormattingEnabled = true;
+            this.kategorijaGradivoComboBox.Location = new System.Drawing.Point(71, 113);
+            this.kategorijaGradivoComboBox.Name = "kategorijaGradivoComboBox";
+            this.kategorijaGradivoComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kategorijaGradivoComboBox.TabIndex = 12;
             // 
             // dodajGradivoButton
             // 
@@ -494,6 +510,7 @@ namespace LibraryProject
             this.dodajGradivoButton.TabIndex = 11;
             this.dodajGradivoButton.Text = "Dodaj";
             this.dodajGradivoButton.UseVisualStyleBackColor = true;
+            this.dodajGradivoButton.Click += new System.EventHandler(this.dodajGradivoButton_Click);
             // 
             // label10
             // 
@@ -513,19 +530,19 @@ namespace LibraryProject
             this.label11.TabIndex = 10;
             this.label11.Text = "Založba:";
             // 
-            // textBox12
+            // avtorGradivoTextBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(71, 61);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 7;
+            this.avtorGradivoTextBox.Location = new System.Drawing.Point(71, 61);
+            this.avtorGradivoTextBox.Name = "avtorGradivoTextBox";
+            this.avtorGradivoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.avtorGradivoTextBox.TabIndex = 7;
             // 
-            // textBox10
+            // zalozbaGradivoTextBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(71, 87);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 9;
+            this.zalozbaGradivoTextBox.Location = new System.Drawing.Point(71, 87);
+            this.zalozbaGradivoTextBox.Name = "zalozbaGradivoTextBox";
+            this.zalozbaGradivoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.zalozbaGradivoTextBox.TabIndex = 9;
             // 
             // label13
             // 
@@ -536,12 +553,12 @@ namespace LibraryProject
             this.label13.TabIndex = 6;
             this.label13.Text = "Naslov:";
             // 
-            // textBox11
+            // naslovGradivoTextBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(71, 35);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 5;
+            this.naslovGradivoTextBox.Location = new System.Drawing.Point(71, 35);
+            this.naslovGradivoTextBox.Name = "naslovGradivoTextBox";
+            this.naslovGradivoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.naslovGradivoTextBox.TabIndex = 5;
             // 
             // label12
             // 
@@ -683,22 +700,6 @@ namespace LibraryProject
             this.imeTextBox2.Size = new System.Drawing.Size(100, 20);
             this.imeTextBox2.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Inv. st:";
-            // 
-            // invStTextBox
-            // 
-            this.invStTextBox.Location = new System.Drawing.Point(60, 19);
-            this.invStTextBox.Name = "invStTextBox";
-            this.invStTextBox.Size = new System.Drawing.Size(100, 20);
-            this.invStTextBox.TabIndex = 11;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,13 +763,13 @@ namespace LibraryProject
         private System.Windows.Forms.Button isciButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox avtorGradivoTextBox;
+        private System.Windows.Forms.TextBox zalozbaGradivoTextBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox naslovGradivoTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button dodajGradivoButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox kategorijaGradivoComboBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox imeTextBox2;
         private System.Windows.Forms.Label label16;
@@ -778,9 +779,9 @@ namespace LibraryProject
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox zalozbaGradivoTextBox2;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox letoIzdajeGradivoTextBox;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.RadioButton kupljenoRadioButton2;
         private System.Windows.Forms.RadioButton kupljenoRadioButton1;

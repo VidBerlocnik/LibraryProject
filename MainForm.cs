@@ -135,5 +135,10 @@ namespace LibraryProject
                 }
             }
         }
+
+        private void dodajGradivoButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

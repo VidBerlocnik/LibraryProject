@@ -29,27 +29,27 @@ namespace LibraryProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.uporabniskoImeTextBox = new System.Windows.Forms.TextBox();
+            this.gesloTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.registerButton = new System.Windows.Forms.Button();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.registracijaButton = new System.Windows.Forms.Button();
+            this.prijavaButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // usernameTextBox
+            // uporabniskoImeTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(107, 54);
-            this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usernameTextBox.TabIndex = 0;
+            this.uporabniskoImeTextBox.Location = new System.Drawing.Point(107, 54);
+            this.uporabniskoImeTextBox.Name = "uporabniskoImeTextBox";
+            this.uporabniskoImeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.uporabniskoImeTextBox.TabIndex = 0;
             // 
-            // passwordTextBox
+            // gesloTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(107, 80);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passwordTextBox.TabIndex = 1;
+            this.gesloTextBox.Location = new System.Drawing.Point(107, 80);
+            this.gesloTextBox.Name = "gesloTextBox";
+            this.gesloTextBox.Size = new System.Drawing.Size(100, 20);
+            this.gesloTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -69,35 +69,37 @@ namespace LibraryProject
             this.label2.TabIndex = 3;
             this.label2.Text = "Geslo:";
             // 
-            // registerButton
+            // registracijaButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(26, 124);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(75, 23);
-            this.registerButton.TabIndex = 4;
-            this.registerButton.Text = "Registracija";
-            this.registerButton.UseVisualStyleBackColor = true;
+            this.registracijaButton.Location = new System.Drawing.Point(26, 124);
+            this.registracijaButton.Name = "registracijaButton";
+            this.registracijaButton.Size = new System.Drawing.Size(75, 23);
+            this.registracijaButton.TabIndex = 4;
+            this.registracijaButton.Text = "Registracija";
+            this.registracijaButton.UseVisualStyleBackColor = true;
+            this.registracijaButton.Click += new System.EventHandler(this.registracijaButton_Click);
             // 
-            // loginButton
+            // prijavaButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(122, 124);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 5;
-            this.loginButton.Text = "Prijava";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.prijavaButton.Location = new System.Drawing.Point(122, 124);
+            this.prijavaButton.Name = "prijavaButton";
+            this.prijavaButton.Size = new System.Drawing.Size(75, 23);
+            this.prijavaButton.TabIndex = 5;
+            this.prijavaButton.Text = "Prijava";
+            this.prijavaButton.UseVisualStyleBackColor = true;
+            this.prijavaButton.Click += new System.EventHandler(this.prijavaButton_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.registerButton);
+            this.Controls.Add(this.prijavaButton);
+            this.Controls.Add(this.registracijaButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(this.gesloTextBox);
+            this.Controls.Add(this.uporabniskoImeTextBox);
             this.Name = "LoginForm";
             this.Text = "Prijava";
             this.ResumeLayout(false);
@@ -107,12 +109,12 @@ namespace LibraryProject
 
         #endregion
 
-        private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.TextBox uporabniskoImeTextBox;
+        private System.Windows.Forms.TextBox gesloTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button registerButton;
-        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button registracijaButton;
+        private System.Windows.Forms.Button prijavaButton;
     }
 }
 

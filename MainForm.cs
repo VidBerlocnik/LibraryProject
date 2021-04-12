@@ -12,6 +12,7 @@ namespace LibraryProject
 {
     public partial class MainForm : Form
     {
+        int uporabnik_id = -1;
         public MainForm()
         {
             InitializeComponent();
@@ -24,10 +25,52 @@ namespace LibraryProject
 
         private void loadUserList()
         {
-            List<string> uporaniki = Database.izberiVseUporabnike();
-            foreach (var item in uporaniki)
+            List<Uporabniki> uporabniki = Database.izberiVseUporabnike();
+            foreach (Uporabniki uporabnik in uporabniki)
             {
-                claniListBox.Items.Add(item);
+                claniListBox.Items.Add(uporabnik);
+            }
+        }
+
+        private void claniListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (claniListBox.SelectedIndex != -1)
+            {
+                Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
+                imePriimekLabel.Text = uporabnik.ime + " " + uporabnik.priimek;
+                uporabnik_id = uporabnik.id;
+                tabControl1.SelectedTab = tabControl1.TabPages["vraciloIzposojaTabPage"];
+            }
+        }
+
+        private void izposojenoListBoxUpdate()
+        {
+            List<Knjiga> knjige = Database.izpisIzposojenegaGradiva(uporabnik_id);
+            foreach (Knjiga knjiga in knjige)
+            {
+                izposojenoGradivoListBox.Items.Add(knjiga);
+            }
+        }
+
+        private void imePriimekTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (imePriimekTextBox.Text != "")
+            {
+                List<Uporabniki> uporabniki = Database.IsciVseUporabnike(imePriimekTextBox.Text);
+                claniListBox.Items.Clear();
+                foreach (Uporabniki uporabnik in uporabniki)
+                {
+                    claniListBox.Items.Add(uporabnik);
+                }
+            }
+            else
+            {
+                List<Uporabniki> uporabniki = Database.izberiVseUporabnike();
+                claniListBox.Items.Clear();
+                foreach (Uporabniki uporabnik in uporabniki)
+                {
+                    claniListBox.Items.Add(uporabnik);
+                }
             }
         }
 

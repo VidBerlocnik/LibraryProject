@@ -104,5 +104,14 @@ namespace LibraryProject
                 MessageBox.Show("Napaka pri dodajanju člana!");
             }
         }
+
+        private void izposodiGradivoButton_Click(object sender, EventArgs e)
+        {
+            if (vsoGradivoListBox.SelectedIndex != -1)
+            {
+                Knjiga knjiga = (Knjiga)vsoGradivoListBox.SelectedItem;
+                Database.izposojaGradiva(knjiga, uporabnik_id);
+            }
+        }
     }
 }

@@ -190,6 +190,7 @@ namespace LibraryProject
             this.izposodiGradivoButton.TabIndex = 13;
             this.izposodiGradivoButton.Text = "Izposodi";
             this.izposodiGradivoButton.UseVisualStyleBackColor = true;
+            this.izposodiGradivoButton.Click += new System.EventHandler(this.izposodiGradivoButton_Click);
             // 
             // vsoGradivoListBox
             // 

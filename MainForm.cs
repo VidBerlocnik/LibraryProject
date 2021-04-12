@@ -36,9 +36,28 @@ namespace LibraryProject
         {
             if (claniListBox.SelectedIndex != -1)
             {
+                //Dobi in shrani izbranega uporabnika
                 Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
                 imePriimekLabel.Text = uporabnik.ime + " " + uporabnik.priimek;
                 uporabnik_id = uporabnik.id;
+
+                //Izpiše izposojeno gradivo izbranega uporabnika
+                izposojenoGradivoListBox.Items.Clear();
+                List<Knjiga> izposojenoGradivo = Database.izpisIzposojenegaGradiva(uporabnik_id);
+                foreach (Knjiga knjiga in izposojenoGradivo)
+                {
+                    izposojenoGradivoListBox.Items.Add(knjiga);
+                }
+
+                //Izpiše vso gradivo
+                vsoGradivoListBox.Items.Clear();
+                List<Knjiga> vseKnjige = Database.izpisVsegaGradiva();
+                foreach (Knjiga knjiga1 in vseKnjige)
+                {
+                    vsoGradivoListBox.Items.Add(knjiga1);
+                }
+
+                //Prikaže vracilo/izposoja tab
                 tabControl1.SelectedTab = tabControl1.TabPages["vraciloIzposojaTabPage"];
             }
         }
@@ -83,19 +102,6 @@ namespace LibraryProject
             catch (Exception)
             {
                 MessageBox.Show("Napaka pri dodajanju člana!");
-            }
-        }
-
-        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControl1.TabIndex == tabControl1.TabPages.IndexOf(tabControl1.TabPages["vraciloIzposojaTabPage"]))
-            {
-                izposojenoGradivoListBox.Items.Clear();
-                List<Knjiga> izposojenoGradivo = Database.izpisIzposojenegaGradiva(uporabnik_id);
-                foreach (Knjiga knjiga in izposojenoGradivo)
-                {
-                    izposojenoGradivoListBox.Items.Add(knjiga);
-                }
             }
         }
     }

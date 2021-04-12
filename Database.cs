@@ -167,5 +167,28 @@ namespace LibraryProject
             }
             return avtor;
         }
+
+        //Vrne seznam vsega gradiva
+        //Namenjeno listbox display
+        public static List<Knjiga> izpisVsegaGradiva()
+        {
+            List<Knjiga> seznam = new List<Knjiga>();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id FROM knjige;", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string naslov = reader.GetString(1);
+                    string leto_izdaje = reader.GetString(2);
+                    int avtor_id = reader.GetInt32(3);
+                    seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id)));
+                }
+                con.Close();
+            }
+            return seznam;
+        }
     }
 }

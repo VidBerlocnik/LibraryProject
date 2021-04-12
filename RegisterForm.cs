@@ -21,7 +21,7 @@ namespace LibraryProject
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
-            Close();
+            Hide();
         }
 
         private void registerButton_Click(object sender, EventArgs e)

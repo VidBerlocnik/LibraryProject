@@ -95,5 +95,25 @@ namespace LibraryProject
                 gradivoListBox.Items.Add(gradivo);
             }
         }
+
+        private void isciButton_Click(object sender, EventArgs e)
+        {
+            if(invStTextBox.Text.Length > 0)
+            {
+
+            }
+            else if(naslovTextBox2.Text.Length > 0)
+            {
+
+            }
+            else if(avtorTextBox.Text.Length > 0)
+            {
+
+            }
+            else if(zalozbaTextBox.Text.Length > 0)
+            {
+
+            }
+        }
     }
 }

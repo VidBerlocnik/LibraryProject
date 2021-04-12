@@ -32,6 +32,10 @@ namespace LibraryProject
             string geslo = gesloTextBox.Text;
 
             Database.Registracija(ime, priimek, uporabniskoIme, geslo);
+
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            Hide();
         }
     }
 }

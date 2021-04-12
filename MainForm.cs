@@ -138,7 +138,28 @@ namespace LibraryProject
 
         private void dodajGradivoButton_Click(object sender, EventArgs e)
         {
+            if(avtorGradivoTextBox.Text.Length > 0)
+            {
+                if (letoIzdajeGradivoTextBox.Text.Length > 0)
+                {
+                    if (naslovGradivoTextBox.Text.Length > 0)
+                    {
+                        if (zalozbaGradivoTextBox.Text.Length > 0)
+                        {
+                            if(invStTextBox2.Text.Length > 0)
+                            {
+                                string avtor = avtorGradivoTextBox.Text;
+                                string[] avtorr = avtor.Split(' ');
+                                string ime = avtorr[0].Trim();
+                                string priimek = avtorr[1].Trim();
 
+                                Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaGradivoTextBox.Text);
+                                Database.DodajGradivo(gradivo);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

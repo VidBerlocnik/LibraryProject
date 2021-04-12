@@ -52,9 +52,7 @@ namespace LibraryProject
             this.iskanjeGradivaTabPage = new System.Windows.Forms.TabPage();
             this.isciButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.invStTextBox = new System.Windows.Forms.TextBox();
             this.zalozbaTextBox = new System.Windows.Forms.TextBox();
             this.naslovTextBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -309,7 +307,7 @@ namespace LibraryProject
             // 
             // isciButton
             // 
-            this.isciButton.Location = new System.Drawing.Point(17, 188);
+            this.isciButton.Location = new System.Drawing.Point(8, 155);
             this.isciButton.Name = "isciButton";
             this.isciButton.Size = new System.Drawing.Size(75, 23);
             this.isciButton.TabIndex = 15;
@@ -319,9 +317,7 @@ namespace LibraryProject
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.invStTextBox);
             this.groupBox1.Controls.Add(this.zalozbaTextBox);
             this.groupBox1.Controls.Add(this.naslovTextBox2);
             this.groupBox1.Controls.Add(this.label8);
@@ -329,46 +325,30 @@ namespace LibraryProject
             this.groupBox1.Controls.Add(this.avtorTextBox);
             this.groupBox1.Location = new System.Drawing.Point(8, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 134);
+            this.groupBox1.Size = new System.Drawing.Size(173, 101);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Iskanje";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Inv. št.:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 103);
+            this.label7.Location = new System.Drawing.Point(4, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "Založba:";
             // 
-            // invStTextBox
-            // 
-            this.invStTextBox.Location = new System.Drawing.Point(60, 22);
-            this.invStTextBox.Name = "invStTextBox";
-            this.invStTextBox.Size = new System.Drawing.Size(100, 20);
-            this.invStTextBox.TabIndex = 3;
-            // 
             // zalozbaTextBox
             // 
-            this.zalozbaTextBox.Location = new System.Drawing.Point(60, 100);
+            this.zalozbaTextBox.Location = new System.Drawing.Point(58, 71);
             this.zalozbaTextBox.Name = "zalozbaTextBox";
             this.zalozbaTextBox.Size = new System.Drawing.Size(100, 20);
             this.zalozbaTextBox.TabIndex = 9;
             // 
             // naslovTextBox2
             // 
-            this.naslovTextBox2.Location = new System.Drawing.Point(60, 48);
+            this.naslovTextBox2.Location = new System.Drawing.Point(58, 19);
             this.naslovTextBox2.Name = "naslovTextBox2";
             this.naslovTextBox2.Size = new System.Drawing.Size(100, 20);
             this.naslovTextBox2.TabIndex = 5;
@@ -376,7 +356,7 @@ namespace LibraryProject
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 77);
+            this.label8.Location = new System.Drawing.Point(4, 48);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 8;
@@ -385,7 +365,7 @@ namespace LibraryProject
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 51);
+            this.label9.Location = new System.Drawing.Point(4, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 6;
@@ -393,7 +373,7 @@ namespace LibraryProject
             // 
             // avtorTextBox
             // 
-            this.avtorTextBox.Location = new System.Drawing.Point(60, 74);
+            this.avtorTextBox.Location = new System.Drawing.Point(58, 45);
             this.avtorTextBox.Name = "avtorTextBox";
             this.avtorTextBox.Size = new System.Drawing.Size(100, 20);
             this.avtorTextBox.TabIndex = 7;
@@ -752,9 +732,7 @@ namespace LibraryProject
         private System.Windows.Forms.Button izposodiGradivoButton;
         private System.Windows.Forms.Button vrniGradivoButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox invStTextBox;
         private System.Windows.Forms.TextBox zalozbaTextBox;
         private System.Windows.Forms.TextBox naslovTextBox2;
         private System.Windows.Forms.Label label8;

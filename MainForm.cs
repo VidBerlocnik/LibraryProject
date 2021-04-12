@@ -98,21 +98,32 @@ namespace LibraryProject
 
         private void isciButton_Click(object sender, EventArgs e)
         {
-            if(invStTextBox.Text.Length > 0)
+            if(naslovTextBox2.Text.Length > 0)
             {
-
-            }
-            else if(naslovTextBox2.Text.Length > 0)
-            {
-
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterNaslov;
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
             }
             else if(avtorTextBox.Text.Length > 0)
             {
-
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterAvtor;
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
             }
             else if(zalozbaTextBox.Text.Length > 0)
             {
-
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterZalozba;
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
             }
         }
     }

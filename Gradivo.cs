@@ -15,19 +15,19 @@ namespace LibraryProject
         public string LetoIzdaje { get; set; }
         public string ImeAvtorja { get; set; }
         public string PriimekAvtorja { get; set; }
-        public string ImeZalozba { get; set; }
+        public int ZalozbaId { get; set; }
         public bool Kupljeno { get; set; }
         public bool Izgubljena { get; set; }
 
         //Constructor
-        public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek, string zalozba)
+        public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek, int zalozba)
         {
             Id = id;
             Naslov = naslov;
             LetoIzdaje = letoIzdaje;
             ImeAvtorja = ime;
             PriimekAvtorja = priimek;
-            ImeZalozba = zalozba;
+            ZalozbaId = zalozba;
             Izgubljena = false;
         }
         public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek)
@@ -37,17 +37,17 @@ namespace LibraryProject
             LetoIzdaje = letoIzdaje;
             ImeAvtorja = ime;
             PriimekAvtorja = priimek;
-            ImeZalozba = null;
+            ZalozbaId = -1;
             Izgubljena = false;
         }
-        public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek, string zalozba, bool kupljeno)
+        public Gradivo(int id, string naslov, string letoIzdaje, string ime, string priimek, int zalozba, bool kupljeno)
         {
             Id = id;
             Naslov = naslov;
             LetoIzdaje = letoIzdaje;
             ImeAvtorja = ime;
             PriimekAvtorja = priimek;
-            ImeZalozba = zalozba;
+            ZalozbaId = zalozba;
             Kupljeno = kupljeno;
             Izgubljena = false;
         }
@@ -55,7 +55,7 @@ namespace LibraryProject
         //functions
         public override string ToString()
         {
-            return Id.ToString() + " " + Naslov + " " + ImeAvtorja + " " + PriimekAvtorja + " " + LetoIzdaje + " " + ImeZalozba;
+            return Id.ToString() + " " + Naslov + " " + ImeAvtorja + " " + PriimekAvtorja + " " + LetoIzdaje;
         }
     }
 }

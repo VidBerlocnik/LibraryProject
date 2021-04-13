@@ -35,18 +35,11 @@ namespace LibraryProject
             this.label1 = new System.Windows.Forms.Label();
             this.imePriimekTextBox = new System.Windows.Forms.TextBox();
             this.vraciloIzposojaTabPage = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.vrniGradivoButton = new System.Windows.Forms.Button();
             this.izposodiGradivoButton = new System.Windows.Forms.Button();
             this.vsoGradivoListBox = new System.Windows.Forms.ListBox();
-            this.iskanjeGroupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.imePriimekLabel = new System.Windows.Forms.Label();
             this.izposojenoGradivoListBox = new System.Windows.Forms.ListBox();
             this.iskanjeGradivaTabPage = new System.Windows.Forms.TabPage();
@@ -95,7 +88,6 @@ namespace LibraryProject
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
-            this.iskanjeGroupBox.SuspendLayout();
             this.iskanjeGradivaTabPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.dodajGradivoTabPage.SuspendLayout();
@@ -157,10 +149,11 @@ namespace LibraryProject
             // 
             // vraciloIzposojaTabPage
             // 
+            this.vraciloIzposojaTabPage.Controls.Add(this.textBox1);
+            this.vraciloIzposojaTabPage.Controls.Add(this.label3);
             this.vraciloIzposojaTabPage.Controls.Add(this.vrniGradivoButton);
             this.vraciloIzposojaTabPage.Controls.Add(this.izposodiGradivoButton);
             this.vraciloIzposojaTabPage.Controls.Add(this.vsoGradivoListBox);
-            this.vraciloIzposojaTabPage.Controls.Add(this.iskanjeGroupBox);
             this.vraciloIzposojaTabPage.Controls.Add(this.imePriimekLabel);
             this.vraciloIzposojaTabPage.Controls.Add(this.izposojenoGradivoListBox);
             this.vraciloIzposojaTabPage.Location = new System.Drawing.Point(4, 22);
@@ -171,14 +164,32 @@ namespace LibraryProject
             this.vraciloIzposojaTabPage.Text = "Vracilo/izposoja";
             this.vraciloIzposojaTabPage.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(86, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(341, 26);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Iskanje: ";
+            // 
             // vrniGradivoButton
             // 
             this.vrniGradivoButton.Location = new System.Drawing.Point(312, 237);
+            this.vrniGradivoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vrniGradivoButton.Name = "vrniGradivoButton";
             this.vrniGradivoButton.Size = new System.Drawing.Size(75, 23);
             this.vrniGradivoButton.TabIndex = 14;
             this.vrniGradivoButton.Text = "Vrni";
             this.vrniGradivoButton.UseVisualStyleBackColor = true;
+            this.vrniGradivoButton.Click += new System.EventHandler(this.vrniGradivoButton_Click);
             // 
             // izposodiGradivoButton
             // 
@@ -188,6 +199,7 @@ namespace LibraryProject
             this.izposodiGradivoButton.TabIndex = 13;
             this.izposodiGradivoButton.Text = "Izposodi";
             this.izposodiGradivoButton.UseVisualStyleBackColor = true;
+            this.izposodiGradivoButton.Click += new System.EventHandler(this.izposodiGradivoButton_Click);
             // 
             // vsoGradivoListBox
             // 
@@ -715,8 +727,6 @@ namespace LibraryProject
             this.ClaniTabPage.PerformLayout();
             this.vraciloIzposojaTabPage.ResumeLayout(false);
             this.vraciloIzposojaTabPage.PerformLayout();
-            this.iskanjeGroupBox.ResumeLayout(false);
-            this.iskanjeGroupBox.PerformLayout();
             this.iskanjeGradivaTabPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -741,15 +751,6 @@ namespace LibraryProject
         private System.Windows.Forms.TextBox imePriimekTextBox;
         private System.Windows.Forms.ListBox izposojenoGradivoListBox;
         private System.Windows.Forms.Label imePriimekLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox iskanjeGroupBox;
         private System.Windows.Forms.ListBox vsoGradivoListBox;
         private System.Windows.Forms.Button izposodiGradivoButton;
         private System.Windows.Forms.Button vrniGradivoButton;
@@ -793,5 +794,7 @@ namespace LibraryProject
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox invStTextBox2;
         private System.Windows.Forms.ComboBox zalozbaComboBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

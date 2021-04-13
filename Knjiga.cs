@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryProject
 {
+    //dodaj zalozbo property
     class Knjiga
     {
         public int id { get; set; }
@@ -14,31 +15,36 @@ namespace LibraryProject
         public bool izgubljena { get; set; }
         public bool trgovina { get; set; }
         public string opombe { get; set; }
-        //TODO: add author class proprety
+        public int inventarna_st { get; set; }
+        public Avtor avtor { get; set; }
 
         public Knjiga()
         {
         }
 
-        public Knjiga(int id, string naslov, string leto_izdaje, bool izgubljena, bool trgovina)
+        public Knjiga(int id, string naslov, string leto_izdaje, bool izgubljena, bool trgovina, int inventarna_st, Avtor avtor)
         {
             this.id = id;
             this.naslov = naslov;
             this.leto_izdaje = leto_izdaje;
             this.izgubljena = izgubljena;
             this.trgovina = trgovina;
+            this.inventarna_st = inventarna_st;
+            this.avtor = avtor;
         }
 
-        public Knjiga(int id, string naslov, string leto_izdaje)
+        public Knjiga(int id, string naslov, string leto_izdaje, int inventarna_st, Avtor avtor)
         {
             this.id = id;
             this.naslov = naslov;
             this.leto_izdaje = leto_izdaje;
+            this.inventarna_st = inventarna_st;
+            this.avtor = avtor;
         }
 
         public override string ToString()
         {
-            return this.naslov + " ; " + leto_izdaje; //TODO: update so it returns author as well
+            return this.naslov + " ; " + leto_izdaje + " ; " + avtor.ime + " " + avtor.priimek;
         }
     }
 }

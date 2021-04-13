@@ -66,8 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Avtor.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Gradivo.cs" />
+    <Compile Include="Izposoja.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

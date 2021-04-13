@@ -17,6 +17,7 @@ namespace LibraryProject
         {
             InitializeComponent();
             kupljenoRadioButton1.Checked = true;
+            zalozbaComboBox.SelectedIndex = 0;
             FillZalozbeCombobox();
         }
 

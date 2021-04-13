@@ -273,7 +273,7 @@ namespace LibraryProject
                 {
                     //Fix SQL
                     con.Open();
-                    SQLiteCommand com = new SQLiteCommand("INSERT INTO knjige (leto_izdaje, naslov, avtor_id, zalozba_id, inventarna_st) VALUES ('" + gradivo.LetoIzdaje + "', '" + gradivo.Naslov + "', (SELECT id FROM avtorji WHERE(ime = '" + gradivo.ImeAvtorja + "') AND (priimek = '" + gradivo.PriimekAvtorja + "')), (SELECT id FROM zalozbe WHERE(ime = '" + gradivo.ImeZalozba + "')), '" + gradivo.Id + "');", con);
+                    SQLiteCommand com = new SQLiteCommand("INSERT INTO knjige (leto_izdaje, naslov, avtor_id, zalozba_id, inventarna_st) VALUES ('" + gradivo.LetoIzdaje + "', '" + gradivo.Naslov + /* "', (SELECT id FROM avtorji WHERE(ime = '" + gradivo.ImeAvtorja + "') AND (priimek = '" + gradivo.PriimekAvtorja + */ "')), " + gradivo.ZalozbaId + ", '" + gradivo.Id + "');", con);
                     com.ExecuteNonQuery();
                     con.Close();
                 }

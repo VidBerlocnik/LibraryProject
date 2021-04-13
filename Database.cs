@@ -130,18 +130,27 @@ namespace LibraryProject
         public static List<Izposoja> izpisIzposojenegaGradiva(int uporabnik_id)
         {
             List<Izposoja> seznam = new List<Izposoja>();
+            Izposoja izposoja = new Izposoja();
+            Knjiga knjiga = new Knjiga();
+            Uporabniki uporabnik = new Uporabniki();
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, k.avtor_id FROM knjige k INNER JOIN izposoje i ON k.id = i.knjiga_id INNER JOIN uporabniki u ON i.uporabnik_id = u.id WHERE u.id = '" + uporabnik_id + "';", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, k.avtor_id, i.id, i.stanje, i.datum, u.id FROM knjige k INNER JOIN izposoje i ON k.id = i.knjiga_id INNER JOIN uporabniki u ON i.uporabnik_id = u.id WHERE u.id = '" + uporabnik_id + "';", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
-                    int id = reader.GetInt32(0);
-                    string naslov = reader.GetString(1);
-                    string leto_izdaje = reader.GetString(2);
-                    int avtor_id = reader.GetInt32(3);
-                    seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id)));
+                    knjiga.id = reader.GetInt32(0);
+                    knjiga.naslov = reader.GetString(1);
+                    knjiga.leto_izdaje = reader.GetString(2);
+                    knjiga.avtor = isciAvtorja(reader.GetInt32(3));
+                    izposoja.id = reader.GetInt32(4);
+                    izposoja.stanje = reader.GetInt32(5);
+                    izposoja.datum = reader.GetDateTime(6);
+                    uporabnik = isciUporabnika(uporabnik_id);
+                    izposoja.uporabnik = uporabnik;
+                    izposoja.knjiga = knjiga;
+                    seznam.Add(izposoja);
                 }
                 con.Close();
             }
@@ -370,6 +379,25 @@ namespace LibraryProject
                 con.Close();
             }
             return seznam;
+        }
+
+        public static Uporabniki isciUporabnika(int uporabnik_id)
+        {
+            Uporabniki uporabnik = new Uporabniki();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki WHERE id = '" + uporabnik_id + "';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    uporabnik.id = reader.GetInt32(0);
+                    uporabnik.ime = reader.GetString(1);
+                    uporabnik.priimek = reader.GetString(2);
+                }
+                con.Close();
+            }
+            return uporabnik;
         }
     }
 }

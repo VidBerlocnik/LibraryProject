@@ -18,7 +18,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {

@@ -127,9 +127,9 @@ namespace LibraryProject
         }
 
         //Vrne seznam izposojenega gradiva od uporabnika
-        public static List<Knjiga> izpisIzposojenegaGradiva(int uporabnik_id)
+        public static List<Izposoja> izpisIzposojenegaGradiva(int uporabnik_id)
         {
-            List<Knjiga> seznam = new List<Knjiga>();
+            List<Izposoja> seznam = new List<Izposoja>();
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
@@ -168,6 +168,31 @@ namespace LibraryProject
             return avtor;
         }
 
+        //Vrne gradivo z id gradivo_id
+        public static Knjiga isciGradivo(int gradivo_id)
+        {
+            Knjiga knjiga = new Knjiga();
+            Avtor avtor = new Avtor();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, inventarna_st, zalozba_id, avtor_id FROM knjige WHERE id = '" + gradivo_id + "';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    knjiga.id = reader.GetInt32(0);
+                    knjiga.naslov = reader.GetString(1);
+                    knjiga.leto_izdaje = reader.GetString(2);
+                    knjiga.inventarna_st = reader.GetInt32(3);
+                    //knjiga.zalozba.id = isciZalozbo(zalozba_id);
+                    avtor = isciAvtorja(reader.GetInt32(5));
+                    knjiga.avtor = avtor;
+                }
+                con.Close();
+            }
+            return knjiga;
+        }
+
         //Vrne seznam vsega gradiva
         //Namenjeno listbox display
         public static List<Knjiga> izpisVsegaGradiva()
@@ -184,7 +209,7 @@ namespace LibraryProject
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
                     int avtor_id = reader.GetInt32(3);
-                    seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id)));
+                    //seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id))); TODO: fix
                 }
                 con.Close();
             }
@@ -192,13 +217,13 @@ namespace LibraryProject
         }
 
         //Izposodi knjigo
-        public static void izposojaGradiva(Knjiga knjiga, int uporabnik_id)
+        public static void izposojaGradiva(Izposoja izposoja, int uporabnik_id)
         {
             //Označi knjigo kot izposojeno
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("UPDATE knjige SET izposojeno = TRUE WHERE id = '" + knjiga.id + "';", con);
+                SQLiteCommand com = new SQLiteCommand("UPDATE knjige SET izposojeno = TRUE WHERE id = '" + izposoja.knjiga.id + "';", con);
                 com.ExecuteNonQuery();
                 con.Close();
             }
@@ -206,7 +231,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("INSERT INTO izposoje (stanje, datum, knjiga_id, uporabnik_id) VALUES ('1', '" + DateTime.Now.ToString() + "', '" + knjiga.id + "', '" + uporabnik_id + "');", con);
+                SQLiteCommand com = new SQLiteCommand("INSERT INTO izposoje (stanje, datum, knjiga_id, uporabnik_id) VALUES ('1', '" + DateTime.Now.ToString() + "', '" + izposoja.knjiga.id + "', '" + uporabnik_id + "');", con);
                 com.ExecuteNonQuery();
                 con.Close();
             }

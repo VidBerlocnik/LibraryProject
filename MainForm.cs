@@ -114,8 +114,8 @@ namespace LibraryProject
         {
             if (vsoGradivoListBox.SelectedIndex != -1)
             {
-                Izposoja knjiga = (Knjiga)vsoGradivoListBox.SelectedItem;
-                Database.izposojaGradiva(knjiga, uporabnik_id);
+                Izposoja knjiga = (Izposoja)vsoGradivoListBox.SelectedItem;
+                Database.izposojaGradiva(, uporabnik_id);
                 vsoGradivoListBoxUpdate();
             }
         }

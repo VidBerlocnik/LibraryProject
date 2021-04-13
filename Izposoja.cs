@@ -22,5 +22,10 @@ namespace LibraryProject
             this.knjiga = knjiga;
             this.uporabnik = uporabnik;
         }
+
+        public Izposoja()
+        {
+
+        }
     }
 }

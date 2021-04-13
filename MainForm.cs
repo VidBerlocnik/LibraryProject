@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +16,16 @@ namespace LibraryProject
         public MainForm()
         {
             InitializeComponent();
+            InitializeComponent();
+            kupljenoRadioButton1.Checked = true;
+            zalozbaComboBox.SelectedIndex = 0;
+            FillZalozbeCombobox();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             loadUserList();
+            loadGradivoList();
         }
 
         private void loadUserList()
@@ -123,6 +128,96 @@ namespace LibraryProject
         private void vrniGradivoButton_Click(object sender, EventArgs e)
         {
 
+        }
+        private void loadGradivoList()
+        {
+            List<Gradivo> gradiva = Database.IzberiVsoGradivo();
+            foreach (Gradivo gradivo in gradiva)
+            {
+                gradivoListBox.Items.Add(gradivo);
+            }
+        }
+
+        private void isciButton_Click(object sender, EventArgs e)
+        {
+            if(naslovTextBox2.Text.Length > 0)
+            {
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterNaslov(naslovTextBox2.Text);
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
+            }
+            else if(avtorTextBox.Text.Length > 0)
+            {
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterAvtor(avtorTextBox.Text);
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
+            }
+            else if(zalozbaTextBox.Text.Length > 0)
+            {
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterZalozba(zalozbaTextBox.Text);
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
+            }
+            else if(invStTextBox.Text.Length > 0)
+            {
+                gradivoListBox.Items.Clear();
+                List<Gradivo> seznam = Database.FilterInvSt(invStTextBox.Text);
+                foreach (Gradivo gradivo in seznam)
+                {
+                    gradivoListBox.Items.Add(gradivo);
+                }
+            }
+        }
+
+        private void dodajGradivoButton_Click(object sender, EventArgs e)
+        {
+            if(avtorGradivoTextBox.Text.Length > 0)
+            {
+                if (letoIzdajeGradivoTextBox.Text.Length > 0)
+                {
+                    if (naslovGradivoTextBox.Text.Length > 0)
+                    {
+                        if(invStTextBox2.Text.Length > 0)
+                        {
+                            string avtor = avtorGradivoTextBox.Text;
+                            string[] avtorr = avtor.Split(' ');
+                            string ime = avtorr[0].Trim();
+                            string priimek = avtorr[1].Trim();
+                            Zalozba zalozbaa = (Zalozba)zalozbaComboBox.SelectedItem;
+
+                            if (kupljenoRadioButton1.Checked)
+                            {
+                                Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaa.Id, true);
+                                Database.DodajGradivo(gradivo);
+                            }
+                            else if (kupljenoRadioButton2.Checked)
+                            {
+                                Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaa.Id, false);
+                                Database.DodajGradivo(gradivo);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void FillZalozbeCombobox()
+        {
+            List<Zalozba> seznam = Database.VrniVseZalozbe();
+
+            foreach(Zalozba zalozba in seznam)
+            {
+                zalozbaComboBox.Items.Add(zalozba);
+            }
         }
     }
 }

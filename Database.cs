@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -195,25 +195,27 @@ namespace LibraryProject
 
         //Vrne seznam vsega gradiva
         //Namenjeno listbox display
-        public static List<Knjiga> izpisVsegaGradiva()
+        public static List<Gradivo> IzberiVsoGradivo()
         {
-            List<Knjiga> seznam = new List<Knjiga>();
+            List<Gradivo> seznamGradiva = new List<Gradivo>();
+
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id FROM knjige;", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
-                    int avtor_id = reader.GetInt32(3);
-                    //seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id))); TODO: fix
+                    string ime = reader.GetString(3);
+                    string priimek = reader.GetString(4);
+                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
                 }
                 con.Close();
             }
-            return seznam;
+            return seznamGradiva;
         }
 
         //Izposodi knjigo
@@ -235,6 +237,139 @@ namespace LibraryProject
                 com.ExecuteNonQuery();
                 con.Close();
             }
+        }
+      public static List<Gradivo> FilterNaslov(string naslovKnjige)
+        {
+            List<Gradivo> seznamGradiva = new List<Gradivo>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
+                    "WHERE(k.naslov LIKE '%" + naslovKnjige + "%';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string naslov = reader.GetString(1);
+                    string leto_izdaje = reader.GetString(2);
+                    string ime = reader.GetString(3);
+                    string priimek = reader.GetString(4);
+                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                }
+                con.Close();
+            }
+            return seznamGradiva;
+        }
+        public static List<Gradivo> FilterAvtor(string avtorKnjige)
+        {
+            List<Gradivo> seznamGradiva = new List<Gradivo>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
+                    "WHERE(a.priimek LIKE '" + avtorKnjige + "%';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string naslov = reader.GetString(1);
+                    string leto_izdaje = reader.GetString(2);
+                    string ime = reader.GetString(3);
+                    string priimek = reader.GetString(4);
+                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                }
+                con.Close();
+            }
+            return seznamGradiva;
+        }
+        public static List<Gradivo> FilterZalozba(string zalozbaKnjige)
+        {
+            List<Gradivo> seznamGradiva = new List<Gradivo>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM zalozbe z INNER JOIN knjige k ON z.id=k.zalozba_id INNER JOIN avtorji a ON k.avtor_id=a.id " +
+                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string naslov = reader.GetString(1);
+                    string leto_izdaje = reader.GetString(2);
+                    string ime = reader.GetString(3);
+                    string priimek = reader.GetString(4);
+                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                }
+                con.Close();
+            }
+            return seznamGradiva;
+        }
+
+        public static List<Gradivo> FilterInvSt(string invStKnjige)
+        {
+            List<Gradivo> seznamGradiva = new List<Gradivo>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
+                    "WHERE(k.invSt LIKE '" + invStKnjige + "%';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string naslov = reader.GetString(1);
+                    string leto_izdaje = reader.GetString(2);
+                    string ime = reader.GetString(3);
+                    string priimek = reader.GetString(4);
+                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                }
+                con.Close();
+            }
+            return seznamGradiva;
+        }
+      public static void DodajGradivo(Gradivo gradivo)
+        {
+            try
+            {
+                using (SQLiteConnection con = new SQLiteConnection(conn))
+                {
+                    //Fix SQL
+                    con.Open();
+                    SQLiteCommand com = new SQLiteCommand("INSERT INTO knjige (leto_izdaje, naslov, avtor_id, zalozba_id, inventarna_st) VALUES ('" + gradivo.LetoIzdaje + "', '" + gradivo.Naslov + /* "', (SELECT id FROM avtorji WHERE(ime = '" + gradivo.ImeAvtorja + "') AND (priimek = '" + gradivo.PriimekAvtorja + */ "')), " + gradivo.ZalozbaId + ", '" + gradivo.Id + "');", con);
+                    com.ExecuteNonQuery();
+                    con.Close();
+                }
+
+                System.Windows.Forms.MessageBox.Show("Gradivo uspesno dodano");
+            }
+            catch (Exception)
+            {
+                System.Windows.Forms.MessageBox.Show("Napaka pri dodajanju novega gradiva");
+            }
+        }
+
+        public static List<Zalozba> VrniVseZalozbe()
+        {
+            List<Zalozba> seznam = new List<Zalozba>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime FROM zalozbe;", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string ime = reader.GetString(1);
+                    seznam.Add(new Zalozba(id, ime));
+                }
+                con.Close();
+            }
+            return seznam;
         }
     }
 }

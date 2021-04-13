@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Avtor.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Gradivo.cs" />
     <Compile Include="Izposoja.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="LoginForm.cs">
@@ -91,6 +92,7 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Uporabniki.cs" />
+    <Compile Include="Zalozba.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

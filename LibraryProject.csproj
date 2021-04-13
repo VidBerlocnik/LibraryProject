@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Avtor.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="Izposoja.cs" />
     <Compile Include="Knjiga.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

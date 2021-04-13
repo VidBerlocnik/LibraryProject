@@ -50,15 +50,20 @@ namespace LibraryProject
                 }
 
                 //Izpiše vso gradivo
-                vsoGradivoListBox.Items.Clear();
-                List<Knjiga> vseKnjige = Database.izpisVsegaGradiva();
-                foreach (Knjiga knjiga1 in vseKnjige)
-                {
-                    vsoGradivoListBox.Items.Add(knjiga1);
-                }
+                vsoGradivoListBoxUpdate();
 
                 //Prikaže vracilo/izposoja tab
                 tabControl1.SelectedTab = tabControl1.TabPages["vraciloIzposojaTabPage"];
+            }
+        }
+
+        private void vsoGradivoListBoxUpdate()
+        {
+            vsoGradivoListBox.Items.Clear();
+            List<Knjiga> vseKnjige = Database.izpisVsegaGradiva();
+            foreach (Knjiga knjiga1 in vseKnjige)
+            {
+                vsoGradivoListBox.Items.Add(knjiga1);
             }
         }
 
@@ -109,9 +114,15 @@ namespace LibraryProject
         {
             if (vsoGradivoListBox.SelectedIndex != -1)
             {
-                Knjiga knjiga = (Knjiga)vsoGradivoListBox.SelectedItem;
+                Izposoja knjiga = (Knjiga)vsoGradivoListBox.SelectedItem;
                 Database.izposojaGradiva(knjiga, uporabnik_id);
+                vsoGradivoListBoxUpdate();
             }
+        }
+
+        private void vrniGradivoButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

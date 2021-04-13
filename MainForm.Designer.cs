@@ -209,23 +209,6 @@ namespace LibraryProject
             this.vsoGradivoListBox.Size = new System.Drawing.Size(278, 329);
             this.vsoGradivoListBox.TabIndex = 12;
             // 
-            // iskanjeGroupBox
-            // 
-            this.iskanjeGroupBox.Controls.Add(this.label3);
-            this.iskanjeGroupBox.Controls.Add(this.label6);
-            this.iskanjeGroupBox.Controls.Add(this.textBox1);
-            this.iskanjeGroupBox.Controls.Add(this.textBox4);
-            this.iskanjeGroupBox.Controls.Add(this.textBox2);
-            this.iskanjeGroupBox.Controls.Add(this.label5);
-            this.iskanjeGroupBox.Controls.Add(this.label4);
-            this.iskanjeGroupBox.Controls.Add(this.textBox3);
-            this.iskanjeGroupBox.Location = new System.Drawing.Point(312, 79);
-            this.iskanjeGroupBox.Name = "iskanjeGroupBox";
-            this.iskanjeGroupBox.Size = new System.Drawing.Size(173, 134);
-            this.iskanjeGroupBox.TabIndex = 11;
-            this.iskanjeGroupBox.TabStop = false;
-            this.iskanjeGroupBox.Text = "Iskanje";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;

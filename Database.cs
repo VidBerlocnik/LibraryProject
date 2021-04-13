@@ -195,27 +195,25 @@ namespace LibraryProject
 
         //Vrne seznam vsega gradiva
         //Namenjeno listbox display
-        public static List<Gradivo> IzberiVsoGradivo()
+        public static List<Knjiga> izpisVsegaGradiva()
         {
-            List<Gradivo> seznamGradiva = new List<Gradivo>();
-
+            List<Knjiga> seznam = new List<Knjiga>();
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id;", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id FROM knjige;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
-                    string ime = reader.GetString(3);
-                    string priimek = reader.GetString(4);
-                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                    int avtor_id = reader.GetInt32(3);
+                    //seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id))); TODO: fix
                 }
                 con.Close();
             }
-            return seznamGradiva;
+            return seznam;
         }
 
         //Izposodi knjigo

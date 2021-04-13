@@ -55,6 +55,7 @@ namespace LibraryProject
             this.avtorTextBox = new System.Windows.Forms.TextBox();
             this.gradivoListBox = new System.Windows.Forms.ListBox();
             this.dodajGradivoTabPage = new System.Windows.Forms.TabPage();
+            this.zalozbaComboBox = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.invStTextBox2 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@ namespace LibraryProject
             this.telefonTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
-            this.zalozbaComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -166,19 +166,19 @@ namespace LibraryProject
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 61);
+            this.textBox1.Location = new System.Drawing.Point(60, 22);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(341, 26);
-            this.textBox1.TabIndex = 16;
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 64);
+            this.label3.Location = new System.Drawing.Point(6, 25);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Iskanje: ";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Inv. št.:";
             // 
             // vrniGradivoButton
             // 
@@ -209,91 +209,10 @@ namespace LibraryProject
             this.vsoGradivoListBox.Size = new System.Drawing.Size(278, 329);
             this.vsoGradivoListBox.TabIndex = 12;
             // 
-            // iskanjeGroupBox
-            // 
-            this.iskanjeGroupBox.Controls.Add(this.label3);
-            this.iskanjeGroupBox.Controls.Add(this.label6);
-            this.iskanjeGroupBox.Controls.Add(this.textBox1);
-            this.iskanjeGroupBox.Controls.Add(this.textBox4);
-            this.iskanjeGroupBox.Controls.Add(this.textBox2);
-            this.iskanjeGroupBox.Controls.Add(this.label5);
-            this.iskanjeGroupBox.Controls.Add(this.label4);
-            this.iskanjeGroupBox.Controls.Add(this.textBox3);
-            this.iskanjeGroupBox.Location = new System.Drawing.Point(312, 79);
-            this.iskanjeGroupBox.Name = "iskanjeGroupBox";
-            this.iskanjeGroupBox.Size = new System.Drawing.Size(173, 134);
-            this.iskanjeGroupBox.TabIndex = 11;
-            this.iskanjeGroupBox.TabStop = false;
-            this.iskanjeGroupBox.Text = "Iskanje";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Inv. št.:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Založba:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(60, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(60, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(60, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 77);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Avtor:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Naslov:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(60, 74);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
-            // 
             // imePriimekLabel
             // 
             this.imePriimekLabel.AutoSize = true;
-            this.imePriimekLabel.Location = new System.Drawing.Point(8, 14);
+            this.imePriimekLabel.Location = new System.Drawing.Point(5, 6);
             this.imePriimekLabel.Name = "imePriimekLabel";
             this.imePriimekLabel.Size = new System.Drawing.Size(68, 13);
             this.imePriimekLabel.TabIndex = 1;
@@ -442,6 +361,14 @@ namespace LibraryProject
             this.dodajGradivoTabPage.TabIndex = 3;
             this.dodajGradivoTabPage.Text = "Dodaj gradivo";
             this.dodajGradivoTabPage.UseVisualStyleBackColor = true;
+            // 
+            // zalozbaComboBox
+            // 
+            this.zalozbaComboBox.FormattingEnabled = true;
+            this.zalozbaComboBox.Location = new System.Drawing.Point(71, 88);
+            this.zalozbaComboBox.Name = "zalozbaComboBox";
+            this.zalozbaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.zalozbaComboBox.TabIndex = 22;
             // 
             // label17
             // 
@@ -704,14 +631,6 @@ namespace LibraryProject
             this.imeTextBox2.Name = "imeTextBox2";
             this.imeTextBox2.Size = new System.Drawing.Size(100, 20);
             this.imeTextBox2.TabIndex = 2;
-            // 
-            // zalozbaComboBox
-            // 
-            this.zalozbaComboBox.FormattingEnabled = true;
-            this.zalozbaComboBox.Location = new System.Drawing.Point(71, 88);
-            this.zalozbaComboBox.Name = "zalozbaComboBox";
-            this.zalozbaComboBox.Size = new System.Drawing.Size(121, 21);
-            this.zalozbaComboBox.TabIndex = 22;
             // 
             // MainForm
             // 

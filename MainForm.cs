@@ -131,10 +131,10 @@ namespace LibraryProject
         }
         private void loadGradivoList()
         {
-            List<Gradivo> gradiva = Database.IzberiVsoGradivo();
-            foreach (Gradivo gradivo in gradiva)
+            List<Knjiga> knjige = Database.izpisVsegaGradiva();
+            foreach (Knjiga knjiga in knjige)
             {
-                gradivoListBox.Items.Add(gradivo);
+                gradivoListBox.Items.Add(knjiga);
             }
         }
 

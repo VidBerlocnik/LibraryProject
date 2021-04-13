@@ -19,6 +19,7 @@ namespace LibraryProject
             InitializeComponent();
             kupljenoRadioButton1.Checked = true;
             FillZalozbeCombobox();
+            loadUserList();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

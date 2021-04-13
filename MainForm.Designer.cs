@@ -35,18 +35,11 @@ namespace LibraryProject
             this.label1 = new System.Windows.Forms.Label();
             this.imePriimekTextBox = new System.Windows.Forms.TextBox();
             this.vraciloIzposojaTabPage = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.vrniGradivoButton = new System.Windows.Forms.Button();
             this.izposodiGradivoButton = new System.Windows.Forms.Button();
             this.vsoGradivoListBox = new System.Windows.Forms.ListBox();
-            this.iskanjeGroupBox = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.imePriimekLabel = new System.Windows.Forms.Label();
             this.izposojenoGradivoListBox = new System.Windows.Forms.ListBox();
             this.iskanjeGradivaTabPage = new System.Windows.Forms.TabPage();
@@ -95,7 +88,6 @@ namespace LibraryProject
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
-            this.iskanjeGroupBox.SuspendLayout();
             this.iskanjeGradivaTabPage.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.dodajGradivoTabPage.SuspendLayout();
@@ -163,10 +155,11 @@ namespace LibraryProject
             // 
             // vraciloIzposojaTabPage
             // 
+            this.vraciloIzposojaTabPage.Controls.Add(this.textBox1);
+            this.vraciloIzposojaTabPage.Controls.Add(this.label3);
             this.vraciloIzposojaTabPage.Controls.Add(this.vrniGradivoButton);
             this.vraciloIzposojaTabPage.Controls.Add(this.izposodiGradivoButton);
             this.vraciloIzposojaTabPage.Controls.Add(this.vsoGradivoListBox);
-            this.vraciloIzposojaTabPage.Controls.Add(this.iskanjeGroupBox);
             this.vraciloIzposojaTabPage.Controls.Add(this.imePriimekLabel);
             this.vraciloIzposojaTabPage.Controls.Add(this.izposojenoGradivoListBox);
             this.vraciloIzposojaTabPage.Location = new System.Drawing.Point(4, 29);
@@ -178,126 +171,53 @@ namespace LibraryProject
             this.vraciloIzposojaTabPage.Text = "Vracilo/izposoja";
             this.vraciloIzposojaTabPage.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(86, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(341, 26);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Iskanje: ";
+            // 
             // vrniGradivoButton
             // 
-            this.vrniGradivoButton.Location = new System.Drawing.Point(468, 365);
+            this.vrniGradivoButton.Location = new System.Drawing.Point(435, 327);
             this.vrniGradivoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vrniGradivoButton.Name = "vrniGradivoButton";
             this.vrniGradivoButton.Size = new System.Drawing.Size(112, 35);
             this.vrniGradivoButton.TabIndex = 14;
             this.vrniGradivoButton.Text = "Vrni";
             this.vrniGradivoButton.UseVisualStyleBackColor = true;
+            this.vrniGradivoButton.Click += new System.EventHandler(this.vrniGradivoButton_Click);
             // 
             // izposodiGradivoButton
             // 
-            this.izposodiGradivoButton.Location = new System.Drawing.Point(615, 365);
+            this.izposodiGradivoButton.Location = new System.Drawing.Point(435, 262);
             this.izposodiGradivoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.izposodiGradivoButton.Name = "izposodiGradivoButton";
             this.izposodiGradivoButton.Size = new System.Drawing.Size(112, 35);
             this.izposodiGradivoButton.TabIndex = 13;
             this.izposodiGradivoButton.Text = "Izposodi";
             this.izposodiGradivoButton.UseVisualStyleBackColor = true;
+            this.izposodiGradivoButton.Click += new System.EventHandler(this.izposodiGradivoButton_Click);
             // 
             // vsoGradivoListBox
             // 
             this.vsoGradivoListBox.FormattingEnabled = true;
             this.vsoGradivoListBox.ItemHeight = 20;
-            this.vsoGradivoListBox.Location = new System.Drawing.Point(759, 122);
+            this.vsoGradivoListBox.Location = new System.Drawing.Point(555, 122);
             this.vsoGradivoListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vsoGradivoListBox.Name = "vsoGradivoListBox";
             this.vsoGradivoListBox.Size = new System.Drawing.Size(415, 504);
             this.vsoGradivoListBox.TabIndex = 12;
-            // 
-            // iskanjeGroupBox
-            // 
-            this.iskanjeGroupBox.Controls.Add(this.label3);
-            this.iskanjeGroupBox.Controls.Add(this.label6);
-            this.iskanjeGroupBox.Controls.Add(this.textBox1);
-            this.iskanjeGroupBox.Controls.Add(this.textBox4);
-            this.iskanjeGroupBox.Controls.Add(this.textBox2);
-            this.iskanjeGroupBox.Controls.Add(this.label5);
-            this.iskanjeGroupBox.Controls.Add(this.label4);
-            this.iskanjeGroupBox.Controls.Add(this.textBox3);
-            this.iskanjeGroupBox.Location = new System.Drawing.Point(468, 122);
-            this.iskanjeGroupBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iskanjeGroupBox.Name = "iskanjeGroupBox";
-            this.iskanjeGroupBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.iskanjeGroupBox.Size = new System.Drawing.Size(260, 206);
-            this.iskanjeGroupBox.TabIndex = 11;
-            this.iskanjeGroupBox.TabStop = false;
-            this.iskanjeGroupBox.Text = "Iskanje";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 38);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Inv. št.:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 158);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Založba:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(90, 34);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(90, 154);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 26);
-            this.textBox4.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(90, 74);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 26);
-            this.textBox2.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 118);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Avtor:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 78);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Naslov:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(90, 114);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 26);
-            this.textBox3.TabIndex = 7;
             // 
             // imePriimekLabel
             // 
@@ -780,8 +700,6 @@ namespace LibraryProject
             this.ClaniTabPage.PerformLayout();
             this.vraciloIzposojaTabPage.ResumeLayout(false);
             this.vraciloIzposojaTabPage.PerformLayout();
-            this.iskanjeGroupBox.ResumeLayout(false);
-            this.iskanjeGroupBox.PerformLayout();
             this.iskanjeGradivaTabPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -806,15 +724,6 @@ namespace LibraryProject
         private System.Windows.Forms.TextBox imePriimekTextBox;
         private System.Windows.Forms.ListBox izposojenoGradivoListBox;
         private System.Windows.Forms.Label imePriimekLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox iskanjeGroupBox;
         private System.Windows.Forms.ListBox vsoGradivoListBox;
         private System.Windows.Forms.Button izposodiGradivoButton;
         private System.Windows.Forms.Button vrniGradivoButton;
@@ -858,5 +767,7 @@ namespace LibraryProject
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox naslovTextBox;
         private System.Windows.Forms.RichTextBox opombeRichTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

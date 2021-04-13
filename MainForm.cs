@@ -36,10 +36,34 @@ namespace LibraryProject
         {
             if (claniListBox.SelectedIndex != -1)
             {
+                //Dobi in shrani izbranega uporabnika
                 Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
                 imePriimekLabel.Text = uporabnik.ime + " " + uporabnik.priimek;
                 uporabnik_id = uporabnik.id;
+
+                //Izpiše izposojeno gradivo izbranega uporabnika
+                izposojenoGradivoListBox.Items.Clear();
+                List<Knjiga> izposojenoGradivo = Database.izpisIzposojenegaGradiva(uporabnik_id);
+                foreach (Knjiga knjiga in izposojenoGradivo)
+                {
+                    izposojenoGradivoListBox.Items.Add(knjiga);
+                }
+
+                //Izpiše vso gradivo
+                vsoGradivoListBoxUpdate();
+
+                //Prikaže vracilo/izposoja tab
                 tabControl1.SelectedTab = tabControl1.TabPages["vraciloIzposojaTabPage"];
+            }
+        }
+
+        private void vsoGradivoListBoxUpdate()
+        {
+            vsoGradivoListBox.Items.Clear();
+            List<Knjiga> vseKnjige = Database.izpisVsegaGradiva();
+            foreach (Knjiga knjiga1 in vseKnjige)
+            {
+                vsoGradivoListBox.Items.Add(knjiga1);
             }
         }
 
@@ -84,6 +108,21 @@ namespace LibraryProject
             {
                 MessageBox.Show("Napaka pri dodajanju člana!");
             }
+        }
+
+        private void izposodiGradivoButton_Click(object sender, EventArgs e)
+        {
+            if (vsoGradivoListBox.SelectedIndex != -1)
+            {
+                Izposoja knjiga = (Izposoja)vsoGradivoListBox.SelectedItem;
+                Database.izposojaGradiva(, uporabnik_id);
+                vsoGradivoListBoxUpdate();
+            }
+        }
+
+        private void vrniGradivoButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

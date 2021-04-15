@@ -146,7 +146,7 @@ namespace LibraryProject
                     knjiga.avtor = isciAvtorja(reader.GetInt32(3));
                     izposoja.id = reader.GetInt32(4);
                     izposoja.stanje = reader.GetInt32(5);
-                    izposoja.datum = reader.GetDateTime(6);
+                    izposoja.datum = DateTime.Parse(reader.GetString(6));
                     uporabnik = isciUporabnika(uporabnik_id);
                     izposoja.uporabnik = uporabnik;
                     izposoja.knjiga = knjiga;

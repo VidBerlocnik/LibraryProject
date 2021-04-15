@@ -27,5 +27,10 @@ namespace LibraryProject
         {
 
         }
+
+        public override string ToString()
+        {
+            return stanje + " ; " + datum + " ; " + knjiga.ToString() + uporabnik.ToString();
+        }
     }
 }

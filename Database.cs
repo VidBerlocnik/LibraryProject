@@ -253,7 +253,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(k.naslov LIKE '%" + naslovKnjige + "%';", con);
+                    "WHERE(k.naslov LIKE '%" + naslovKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -276,7 +276,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(a.priimek LIKE '" + avtorKnjige + "%';", con);
+                    "WHERE(a.priimek LIKE '" + avtorKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -299,7 +299,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM zalozbe z INNER JOIN knjige k ON z.id=k.zalozba_id INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%';", con);
+                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -323,7 +323,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(k.invSt LIKE '" + invStKnjige + "%';", con);
+                    "WHERE(k.invSt LIKE '" + invStKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {

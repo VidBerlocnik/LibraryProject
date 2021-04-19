@@ -18,6 +18,7 @@ namespace LibraryProject
             InitializeComponent();
             kupljenoRadioButton1.Checked = true;
             FillZalozbeCombobox();
+            FillKategorijeCombobox();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -227,6 +228,16 @@ namespace LibraryProject
             foreach(Zalozba zalozba in seznam)
             {
                 zalozbaComboBox.Items.Add(zalozba);
+            }
+        }
+
+        public void FillKategorijeCombobox()
+        {
+            List<string> seznam = Database.VrniVseKategorije();
+
+            foreach (string kategorija in seznam)
+            {
+                kategorijaGradivoComboBox.Items.Add(kategorija);
             }
         }
     }

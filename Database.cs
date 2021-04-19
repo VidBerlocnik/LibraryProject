@@ -136,7 +136,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, k.avtor_id, i.id, i.stanje, i.datum, u.id FROM knjige k INNER JOIN izposoje i ON k.id = i.knjiga_id INNER JOIN uporabniki u ON i.uporabnik_id = u.id WHERE u.id = '" + uporabnik_id + "';", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, k.avtor_id, i.id, i.stanje, i.datum, u.id FROM knjige k INNER JOIN izposoje i ON k.id = i.knjiga_id INNER JOIN uporabniki u ON i.uporabnik_id = u.id WHERE u.id = '" + uporabnik_id + "' AND i.stanje = 1;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -245,7 +245,28 @@ namespace LibraryProject
                 con.Close();
             }
         }
-      public static List<Gradivo> FilterNaslov(string naslovKnjige)
+
+        public static void vraciloGradiva(Izposoja izposoja)
+        {
+            //Označi knjigo kot vrnjeno
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("UPDATE knjige SET izposojeno = FALSE WHERE id = '" + izposoja.knjiga.id + "';", con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            //Označi izposojo kot vrnjeno
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("UPDATE izposoje SET stanje = 0 WHERE id = '" + izposoja.id + "';", con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        public static List<Gradivo> FilterNaslov(string naslovKnjige)
         {
             List<Gradivo> seznamGradiva = new List<Gradivo>();
 

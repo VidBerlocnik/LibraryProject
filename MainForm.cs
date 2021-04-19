@@ -117,15 +117,24 @@ namespace LibraryProject
         {
             if (vsoGradivoListBox.SelectedIndex != -1)
             {
-                Izposoja knjiga = (Izposoja)vsoGradivoListBox.SelectedItem;
-                Database.izposojaGradiva(knjiga, uporabnik_id);
-                vsoGradivoListBoxUpdate();
+                foreach (Izposoja knjiga in vsoGradivoListBox.SelectedItems)
+                {
+                    Database.izposojaGradiva(knjiga, uporabnik_id);
+                }
+                izposojenoListBoxUpdate();
             }
         }
 
         private void vrniGradivoButton_Click(object sender, EventArgs e)
         {
-
+            if (izposojenoGradivoListBox.SelectedIndex != -1)
+            {
+                foreach (Izposoja knjiga in izposojenoGradivoListBox.SelectedItems)
+                {
+                    Database.vraciloGradiva(knjiga);
+                }
+                vsoGradivoListBoxUpdate();
+            }
         }
         private void loadGradivoList()
         {

@@ -220,6 +220,7 @@ namespace LibraryProject
             this.vsoGradivoListBox.Location = new System.Drawing.Point(759, 122);
             this.vsoGradivoListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vsoGradivoListBox.Name = "vsoGradivoListBox";
+            this.vsoGradivoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.vsoGradivoListBox.Size = new System.Drawing.Size(415, 504);
             this.vsoGradivoListBox.TabIndex = 12;
             // 
@@ -241,6 +242,7 @@ namespace LibraryProject
             this.izposojenoGradivoListBox.Location = new System.Drawing.Point(12, 122);
             this.izposojenoGradivoListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.izposojenoGradivoListBox.Name = "izposojenoGradivoListBox";
+            this.izposojenoGradivoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.izposojenoGradivoListBox.Size = new System.Drawing.Size(415, 504);
             this.izposojenoGradivoListBox.TabIndex = 0;
             // 

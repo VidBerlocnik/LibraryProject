@@ -359,25 +359,43 @@ namespace LibraryProject
             }
             return seznamGradiva;
         }
-      public static void DodajGradivo(Gradivo gradivo)
+        public static void DodajGradivo(Gradivo gradivo)
         {
+            int avtorId = VrniAvtorId(gradivo.ImeAvtorja, gradivo.PriimekAvtorja);
             try
             {
                 using (SQLiteConnection con = new SQLiteConnection(conn))
                 {
-                    //Fix SQL
                     con.Open();
-                    SQLiteCommand com = new SQLiteCommand("INSERT INTO knjige (leto_izdaje, naslov, avtor_id, zalozba_id, inventarna_st) VALUES ('" + gradivo.LetoIzdaje + "', '" + gradivo.Naslov + /* "', (SELECT id FROM avtorji WHERE(ime = '" + gradivo.ImeAvtorja + "') AND (priimek = '" + gradivo.PriimekAvtorja + */ "')), " + gradivo.ZalozbaId + ", '" + gradivo.Id + "');", con);
+                    SQLiteCommand com = new SQLiteCommand("INSERT INTO knjige (leto_izdaje, naslov, avtor_id, zalozba_id, inventarna_st, izgubljena, trgovina) VALUES ('" + gradivo.LetoIzdaje + "', '" + gradivo.Naslov + "', " + avtorId + ", " + gradivo.ZalozbaId + ", " + gradivo.Id + ", false, false);", con);
                     com.ExecuteNonQuery();
                     con.Close();
                 }
 
                 System.Windows.Forms.MessageBox.Show("Gradivo uspesno dodano");
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                System.Windows.Forms.MessageBox.Show(e.ToString());
                 System.Windows.Forms.MessageBox.Show("Napaka pri dodajanju novega gradiva");
             }
+        }
+
+        public static int VrniAvtorId(string ime, string priimek)
+        {
+            int id = -1;
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id FROM avtorji WHERE (ime = '" + ime + "') AND (priimek = '" + priimek + "');", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    id = reader.GetInt32(0);
+                }
+                con.Close();
+            }
+            return id;
         }
 
         public static List<Zalozba> VrniVseZalozbe()

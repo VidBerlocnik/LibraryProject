@@ -417,6 +417,24 @@ namespace LibraryProject
             }
             return seznam;
         }
+        public static List<string> VrniVseKategorije()
+        {
+            List<string> seznam = new List<string>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT ime FROM kategorije;", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ime = reader.GetString(0);
+                    seznam.Add(ime);
+                }
+                con.Close();
+            }
+            return seznam;
+        }
 
         public static Uporabniki isciUporabnika(int uporabnik_id)
         {

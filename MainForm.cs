@@ -19,6 +19,7 @@ namespace LibraryProject
             kupljenoRadioButton1.Checked = true;
             FillZalozbeCombobox();
             FillKategorijeCombobox();
+            loadGradivoList();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -143,6 +144,7 @@ namespace LibraryProject
             foreach (Knjiga knjiga in knjige)
             {
                 gradivoListBox.Items.Add(knjiga);
+                vsoGradivoListBox.Items.Add(knjiga);
             }
         }
 

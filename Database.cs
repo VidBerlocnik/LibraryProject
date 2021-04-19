@@ -210,7 +210,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id FROM knjige;", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id, inventarna_st FROM knjige;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -218,7 +218,8 @@ namespace LibraryProject
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
                     int avtor_id = reader.GetInt32(3);
-                    //seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id))); TODO: fix
+                    int invSt = reader.GetInt32(4);
+                    seznam.Add(new Knjiga(id, naslov, leto_izdaje, invSt, isciAvtorja(avtor_id)));
                 }
                 con.Close();
             }
@@ -297,7 +298,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(a.priimek LIKE '" + avtorKnjige + "%');", con);
+                    "WHERE(a.priimek LIKE '%" + avtorKnjige + "%') OR (a.ime LIKE '%" + avtorKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -320,7 +321,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM zalozbe z INNER JOIN knjige k ON z.id=k.zalozba_id INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%');", con);
+                    "WHERE(z.ime LIKE '%" + zalozbaKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -344,7 +345,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(k.invSt LIKE '" + invStKnjige + "%');", con);
+                    "WHERE(k.inventarna_st LIKE '" + invStKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {

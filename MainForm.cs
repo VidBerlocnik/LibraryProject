@@ -16,9 +16,7 @@ namespace LibraryProject
         public MainForm()
         {
             InitializeComponent();
-            InitializeComponent();
             kupljenoRadioButton1.Checked = true;
-            zalozbaComboBox.SelectedIndex = 0;
             FillZalozbeCombobox();
         }
 
@@ -48,10 +46,10 @@ namespace LibraryProject
 
                 //Izpiše izposojeno gradivo izbranega uporabnika
                 izposojenoGradivoListBox.Items.Clear();
-                List<Knjiga> izposojenoGradivo = Database.izpisIzposojenegaGradiva(uporabnik_id);
-                foreach (Knjiga knjiga in izposojenoGradivo)
+                List<Izposoja> izposojenoGradivo = Database.izpisIzposojenegaGradiva(uporabnik_id);
+                foreach (Izposoja izposoja in izposojenoGradivo)
                 {
-                    izposojenoGradivoListBox.Items.Add(knjiga);
+                    izposojenoGradivoListBox.Items.Add(izposoja);
                 }
 
                 //Izpiše vso gradivo
@@ -74,10 +72,10 @@ namespace LibraryProject
 
         private void izposojenoListBoxUpdate()
         {
-            List<Knjiga> knjige = Database.izpisIzposojenegaGradiva(uporabnik_id);
-            foreach (Knjiga knjiga in knjige)
+            List<Izposoja> izposoje = Database.izpisIzposojenegaGradiva(uporabnik_id);
+            foreach (Izposoja izposoja in izposoje)
             {
-                izposojenoGradivoListBox.Items.Add(knjiga);
+                izposojenoGradivoListBox.Items.Add(izposoja);
             }
         }
 
@@ -119,22 +117,31 @@ namespace LibraryProject
         {
             if (vsoGradivoListBox.SelectedIndex != -1)
             {
-                Izposoja knjiga = (Izposoja)vsoGradivoListBox.SelectedItem;
-                Database.izposojaGradiva(, uporabnik_id);
-                vsoGradivoListBoxUpdate();
+                foreach (Izposoja knjiga in vsoGradivoListBox.SelectedItems)
+                {
+                    Database.izposojaGradiva(knjiga, uporabnik_id);
+                }
+                izposojenoListBoxUpdate();
             }
         }
 
         private void vrniGradivoButton_Click(object sender, EventArgs e)
         {
-
+            if (izposojenoGradivoListBox.SelectedIndex != -1)
+            {
+                foreach (Izposoja knjiga in izposojenoGradivoListBox.SelectedItems)
+                {
+                    Database.vraciloGradiva(knjiga);
+                }
+                vsoGradivoListBoxUpdate();
+            }
         }
         private void loadGradivoList()
         {
-            List<Gradivo> gradiva = Database.IzberiVsoGradivo();
-            foreach (Gradivo gradivo in gradiva)
+            List<Knjiga> knjige = Database.izpisVsegaGradiva();
+            foreach (Knjiga knjiga in knjige)
             {
-                gradivoListBox.Items.Add(gradivo);
+                gradivoListBox.Items.Add(knjiga);
             }
         }
 

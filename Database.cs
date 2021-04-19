@@ -18,7 +18,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -130,18 +130,27 @@ namespace LibraryProject
         public static List<Izposoja> izpisIzposojenegaGradiva(int uporabnik_id)
         {
             List<Izposoja> seznam = new List<Izposoja>();
+            Izposoja izposoja = new Izposoja();
+            Knjiga knjiga = new Knjiga();
+            Uporabniki uporabnik = new Uporabniki();
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, k.avtor_id FROM knjige k INNER JOIN izposoje i ON k.id = i.knjiga_id INNER JOIN uporabniki u ON i.uporabnik_id = u.id WHERE u.id = '" + uporabnik_id + "';", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, k.avtor_id, i.id, i.stanje, i.datum, u.id FROM knjige k INNER JOIN izposoje i ON k.id = i.knjiga_id INNER JOIN uporabniki u ON i.uporabnik_id = u.id WHERE u.id = '" + uporabnik_id + "' AND i.stanje = 1;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
-                    int id = reader.GetInt32(0);
-                    string naslov = reader.GetString(1);
-                    string leto_izdaje = reader.GetString(2);
-                    int avtor_id = reader.GetInt32(3);
-                    seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id)));
+                    knjiga.id = reader.GetInt32(0);
+                    knjiga.naslov = reader.GetString(1);
+                    knjiga.leto_izdaje = reader.GetString(2);
+                    knjiga.avtor = isciAvtorja(reader.GetInt32(3));
+                    izposoja.id = reader.GetInt32(4);
+                    izposoja.stanje = reader.GetInt32(5);
+                    izposoja.datum = DateTime.Parse(reader.GetString(6));
+                    uporabnik = isciUporabnika(uporabnik_id);
+                    izposoja.uporabnik = uporabnik;
+                    izposoja.knjiga = knjiga;
+                    seznam.Add(izposoja);
                 }
                 con.Close();
             }
@@ -195,27 +204,25 @@ namespace LibraryProject
 
         //Vrne seznam vsega gradiva
         //Namenjeno listbox display
-        public static List<Gradivo> IzberiVsoGradivo()
+        public static List<Knjiga> izpisVsegaGradiva()
         {
-            List<Gradivo> seznamGradiva = new List<Gradivo>();
-
+            List<Knjiga> seznam = new List<Knjiga>();
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id;", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id FROM knjige;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
                     int id = reader.GetInt32(0);
                     string naslov = reader.GetString(1);
                     string leto_izdaje = reader.GetString(2);
-                    string ime = reader.GetString(3);
-                    string priimek = reader.GetString(4);
-                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                    int avtor_id = reader.GetInt32(3);
+                    //seznam.Add(new Knjiga(id, naslov, leto_izdaje, isciAvtorja(avtor_id))); TODO: fix
                 }
                 con.Close();
             }
-            return seznamGradiva;
+            return seznam;
         }
 
         //Izposodi knjigo
@@ -238,7 +245,28 @@ namespace LibraryProject
                 con.Close();
             }
         }
-      public static List<Gradivo> FilterNaslov(string naslovKnjige)
+
+        public static void vraciloGradiva(Izposoja izposoja)
+        {
+            //Označi knjigo kot vrnjeno
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("UPDATE knjige SET izposojeno = FALSE WHERE id = '" + izposoja.knjiga.id + "';", con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            //Označi izposojo kot vrnjeno
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("UPDATE izposoje SET stanje = 0 WHERE id = '" + izposoja.id + "';", con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+        }
+
+        public static List<Gradivo> FilterNaslov(string naslovKnjige)
         {
             List<Gradivo> seznamGradiva = new List<Gradivo>();
 
@@ -246,7 +274,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(k.naslov LIKE '%" + naslovKnjige + "%';", con);
+                    "WHERE(k.naslov LIKE '%" + naslovKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -269,7 +297,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(a.priimek LIKE '" + avtorKnjige + "%';", con);
+                    "WHERE(a.priimek LIKE '" + avtorKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -292,7 +320,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM zalozbe z INNER JOIN knjige k ON z.id=k.zalozba_id INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%';", con);
+                    "WHERE(z.ime LIKE '" + zalozbaKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -316,7 +344,7 @@ namespace LibraryProject
             {
                 con.Open();
                 SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
-                    "WHERE(k.invSt LIKE '" + invStKnjige + "%';", con);
+                    "WHERE(k.invSt LIKE '" + invStKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -370,6 +398,25 @@ namespace LibraryProject
                 con.Close();
             }
             return seznam;
+        }
+
+        public static Uporabniki isciUporabnika(int uporabnik_id)
+        {
+            Uporabniki uporabnik = new Uporabniki();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM uporabniki WHERE id = '" + uporabnik_id + "';", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    uporabnik.id = reader.GetInt32(0);
+                    uporabnik.ime = reader.GetString(1);
+                    uporabnik.priimek = reader.GetString(2);
+                }
+                con.Close();
+            }
+            return uporabnik;
         }
     }
 }

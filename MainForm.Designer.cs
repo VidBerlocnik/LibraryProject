@@ -62,6 +62,7 @@ namespace LibraryProject
             this.avtorTextBox = new System.Windows.Forms.TextBox();
             this.gradivoListBox = new System.Windows.Forms.ListBox();
             this.dodajGradivoTabPage = new System.Windows.Forms.TabPage();
+            this.zalozbaComboBox = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
             this.kupljenoRadioButton2 = new System.Windows.Forms.RadioButton();
             this.kupljenoRadioButton1 = new System.Windows.Forms.RadioButton();
@@ -89,7 +90,8 @@ namespace LibraryProject
             this.telefonTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
-            this.zalozbaComboBox = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.invStGradivoTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -406,6 +408,8 @@ namespace LibraryProject
             // 
             // dodajGradivoTabPage
             // 
+            this.dodajGradivoTabPage.Controls.Add(this.label17);
+            this.dodajGradivoTabPage.Controls.Add(this.invStGradivoTextBox);
             this.dodajGradivoTabPage.Controls.Add(this.zalozbaComboBox);
             this.dodajGradivoTabPage.Controls.Add(this.label21);
             this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton2);
@@ -427,10 +431,18 @@ namespace LibraryProject
             this.dodajGradivoTabPage.Text = "Dodaj gradivo";
             this.dodajGradivoTabPage.UseVisualStyleBackColor = true;
             // 
+            // zalozbaComboBox
+            // 
+            this.zalozbaComboBox.FormattingEnabled = true;
+            this.zalozbaComboBox.Location = new System.Drawing.Point(71, 95);
+            this.zalozbaComboBox.Name = "zalozbaComboBox";
+            this.zalozbaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.zalozbaComboBox.TabIndex = 20;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(8, 153);
+            this.label21.Location = new System.Drawing.Point(8, 181);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(51, 13);
             this.label21.TabIndex = 19;
@@ -439,7 +451,7 @@ namespace LibraryProject
             // kupljenoRadioButton2
             // 
             this.kupljenoRadioButton2.AutoSize = true;
-            this.kupljenoRadioButton2.Location = new System.Drawing.Point(116, 153);
+            this.kupljenoRadioButton2.Location = new System.Drawing.Point(116, 181);
             this.kupljenoRadioButton2.Name = "kupljenoRadioButton2";
             this.kupljenoRadioButton2.Size = new System.Drawing.Size(39, 17);
             this.kupljenoRadioButton2.TabIndex = 18;
@@ -450,7 +462,7 @@ namespace LibraryProject
             // kupljenoRadioButton1
             // 
             this.kupljenoRadioButton1.AutoSize = true;
-            this.kupljenoRadioButton1.Location = new System.Drawing.Point(71, 153);
+            this.kupljenoRadioButton1.Location = new System.Drawing.Point(71, 181);
             this.kupljenoRadioButton1.Name = "kupljenoRadioButton1";
             this.kupljenoRadioButton1.Size = new System.Drawing.Size(39, 17);
             this.kupljenoRadioButton1.TabIndex = 17;
@@ -461,7 +473,7 @@ namespace LibraryProject
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(8, 124);
+            this.label15.Location = new System.Drawing.Point(8, 152);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(61, 13);
             this.label15.TabIndex = 14;
@@ -469,7 +481,7 @@ namespace LibraryProject
             // 
             // letoIzdajeTextBox
             // 
-            this.letoIzdajeTextBox.Location = new System.Drawing.Point(71, 121);
+            this.letoIzdajeTextBox.Location = new System.Drawing.Point(71, 149);
             this.letoIzdajeTextBox.Name = "letoIzdajeTextBox";
             this.letoIzdajeTextBox.Size = new System.Drawing.Size(100, 20);
             this.letoIzdajeTextBox.TabIndex = 13;
@@ -477,24 +489,25 @@ namespace LibraryProject
             // kategorijaComboBox
             // 
             this.kategorijaComboBox.FormattingEnabled = true;
-            this.kategorijaComboBox.Location = new System.Drawing.Point(71, 94);
+            this.kategorijaComboBox.Location = new System.Drawing.Point(71, 122);
             this.kategorijaComboBox.Name = "kategorijaComboBox";
             this.kategorijaComboBox.Size = new System.Drawing.Size(121, 21);
             this.kategorijaComboBox.TabIndex = 12;
             // 
             // dodajGradivoButton
             // 
-            this.dodajGradivoButton.Location = new System.Drawing.Point(87, 191);
+            this.dodajGradivoButton.Location = new System.Drawing.Point(87, 219);
             this.dodajGradivoButton.Name = "dodajGradivoButton";
             this.dodajGradivoButton.Size = new System.Drawing.Size(75, 23);
             this.dodajGradivoButton.TabIndex = 11;
             this.dodajGradivoButton.Text = "Dodaj";
             this.dodajGradivoButton.UseVisualStyleBackColor = true;
+            this.dodajGradivoButton.Click += new System.EventHandler(this.dodajGradivoButton_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(8, 97);
+            this.label10.Location = new System.Drawing.Point(8, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 13);
             this.label10.TabIndex = 4;
@@ -503,7 +516,7 @@ namespace LibraryProject
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 71);
+            this.label11.Location = new System.Drawing.Point(8, 99);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 10;
@@ -511,7 +524,7 @@ namespace LibraryProject
             // 
             // imePriimekAvtorTextBox
             // 
-            this.imePriimekAvtorTextBox.Location = new System.Drawing.Point(71, 42);
+            this.imePriimekAvtorTextBox.Location = new System.Drawing.Point(71, 70);
             this.imePriimekAvtorTextBox.Name = "imePriimekAvtorTextBox";
             this.imePriimekAvtorTextBox.Size = new System.Drawing.Size(100, 20);
             this.imePriimekAvtorTextBox.TabIndex = 7;
@@ -519,7 +532,7 @@ namespace LibraryProject
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 19);
+            this.label13.Location = new System.Drawing.Point(8, 47);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 13);
             this.label13.TabIndex = 6;
@@ -527,7 +540,7 @@ namespace LibraryProject
             // 
             // naslovGradivaTextBox
             // 
-            this.naslovGradivaTextBox.Location = new System.Drawing.Point(71, 16);
+            this.naslovGradivaTextBox.Location = new System.Drawing.Point(71, 44);
             this.naslovGradivaTextBox.Name = "naslovGradivaTextBox";
             this.naslovGradivaTextBox.Size = new System.Drawing.Size(100, 20);
             this.naslovGradivaTextBox.TabIndex = 5;
@@ -535,7 +548,7 @@ namespace LibraryProject
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 45);
+            this.label12.Location = new System.Drawing.Point(8, 73);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 8;
@@ -672,13 +685,21 @@ namespace LibraryProject
             this.imeTextBox2.Size = new System.Drawing.Size(100, 20);
             this.imeTextBox2.TabIndex = 2;
             // 
-            // zalozbaComboBox
+            // label17
             // 
-            this.zalozbaComboBox.FormattingEnabled = true;
-            this.zalozbaComboBox.Location = new System.Drawing.Point(71, 67);
-            this.zalozbaComboBox.Name = "zalozbaComboBox";
-            this.zalozbaComboBox.Size = new System.Drawing.Size(121, 21);
-            this.zalozbaComboBox.TabIndex = 20;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(8, 21);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 13);
+            this.label17.TabIndex = 22;
+            this.label17.Text = "Inv. st:";
+            // 
+            // invStGradivoTextBox
+            // 
+            this.invStGradivoTextBox.Location = new System.Drawing.Point(71, 18);
+            this.invStGradivoTextBox.Name = "invStGradivoTextBox";
+            this.invStGradivoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.invStGradivoTextBox.TabIndex = 21;
             // 
             // MainForm
             // 
@@ -770,5 +791,7 @@ namespace LibraryProject
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox invStTextBox;
         private System.Windows.Forms.ComboBox zalozbaComboBox;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox invStGradivoTextBox;
     }
 }

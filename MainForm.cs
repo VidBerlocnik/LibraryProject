@@ -74,6 +74,7 @@ namespace LibraryProject
 
         private void izposojenoListBoxUpdate()
         {
+            izposojenoGradivoListBox.Items.Clear();
             List<Izposoja> izposoje = Database.izpisIzposojenegaGradiva(uporabnik_id);
             foreach (Izposoja izposoja in izposoje)
             {
@@ -119,11 +120,12 @@ namespace LibraryProject
         {
             if (vsoGradivoListBox.SelectedIndex != -1)
             {
-                foreach (Izposoja knjiga in vsoGradivoListBox.SelectedItems)
+                foreach (Knjiga knjiga in vsoGradivoListBox.SelectedItems)
                 {
                     Database.izposojaGradiva(knjiga, uporabnik_id);
                 }
                 izposojenoListBoxUpdate();
+                vsoGradivoListBoxUpdate();
             }
         }
 
@@ -136,6 +138,7 @@ namespace LibraryProject
                     Database.vraciloGradiva(knjiga);
                 }
                 vsoGradivoListBoxUpdate();
+                izposojenoListBoxUpdate();
             }
         }
         private void loadGradivoList()

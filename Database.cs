@@ -210,7 +210,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id, inventarna_st FROM knjige;", con);
+                SQLiteCommand com = new SQLiteCommand("SELECT id, naslov, leto_izdaje, avtor_id, inventarna_st FROM knjige WHERE izposojeno = 0;", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
                 {
@@ -227,13 +227,13 @@ namespace LibraryProject
         }
 
         //Izposodi knjigo
-        public static void izposojaGradiva(Izposoja izposoja, int uporabnik_id)
+        public static void izposojaGradiva(Knjiga knjiga, int uporabnik_id)
         {
             //Označi knjigo kot izposojeno
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("UPDATE knjige SET izposojeno = TRUE WHERE id = '" + izposoja.knjiga.id + "';", con);
+                SQLiteCommand com = new SQLiteCommand("UPDATE knjige SET izposojeno = TRUE WHERE id = '" + knjiga.id + "';", con);
                 com.ExecuteNonQuery();
                 con.Close();
             }
@@ -241,7 +241,7 @@ namespace LibraryProject
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("INSERT INTO izposoje (stanje, datum, knjiga_id, uporabnik_id) VALUES ('1', '" + DateTime.Now.ToString() + "', '" + izposoja.knjiga.id + "', '" + uporabnik_id + "');", con);
+                SQLiteCommand com = new SQLiteCommand("INSERT INTO izposoje (stanje, datum, knjiga_id, uporabnik_id) VALUES ('1', '" + DateTime.Now.ToString() + "', '" + knjiga.id + "', '" + uporabnik_id + "');", con);
                 com.ExecuteNonQuery();
                 con.Close();
             }

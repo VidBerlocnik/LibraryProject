@@ -183,10 +183,10 @@ namespace LibraryProject
             else if(invStTextBox.Text.Length > 0)
             {
                 gradivoListBox.Items.Clear();
-                List<Gradivo> seznam = Database.FilterInvSt(invStTextBox.Text);
-                foreach (Gradivo gradivo in seznam)
+                List<Knjiga> seznam = Database.FilterInvSt(invStTextBox.Text);
+                foreach (Knjiga knjiga in seznam)
                 {
-                    gradivoListBox.Items.Add(gradivo);
+                    gradivoListBox.Items.Add(knjiga);
                 }
             }
         }
@@ -243,6 +243,28 @@ namespace LibraryProject
             foreach (string kategorija in seznam)
             {
                 kategorijaGradivoComboBox.Items.Add(kategorija);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            {
+                List<Knjiga> knjiga = Database.FilterInvSt(textBox1.Text);
+                vsoGradivoListBox.Items.Clear();
+                foreach (Knjiga knjiga1 in knjiga)
+                {
+                    vsoGradivoListBox.Items.Add(knjiga1);
+                }
+            }
+            else
+            {
+                List<Knjiga> knjiga = Database.izpisVsegaGradiva();
+                vsoGradivoListBox.Items.Clear();
+                foreach (Knjiga knjiga1 in knjiga)
+                {
+                    claniListBox.Items.Add(knjiga1);
+                }
             }
         }
     }

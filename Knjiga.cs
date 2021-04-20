@@ -44,7 +44,7 @@ namespace LibraryProject
 
         public override string ToString()
         {
-            return this.naslov + " ; " + leto_izdaje + " ; " + avtor.ime + " " + avtor.priimek;
+            return this.inventarna_st + " ; " + this.naslov + " ; " + leto_izdaje + " ; " + avtor.ime + " " + avtor.priimek;
         }
     }
 }

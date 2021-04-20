@@ -337,14 +337,14 @@ namespace LibraryProject
             return seznamGradiva;
         }
 
-        public static List<Gradivo> FilterInvSt(string invStKnjige)
+        public static List<Knjiga> FilterInvSt(string invStKnjige)
         {
-            List<Gradivo> seznamGradiva = new List<Gradivo>();
+            List<Knjiga> seznamGradiva = new List<Knjiga>();
 
             using (SQLiteConnection con = new SQLiteConnection(conn))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
+                SQLiteCommand com = new SQLiteCommand("SELECT k.id, k.naslov, k.leto_izdaje, a.ime, a.priimek, a.id, k.inventarna_st FROM knjige k INNER JOIN avtorji a ON k.avtor_id=a.id " +
                     "WHERE(k.inventarna_st LIKE '" + invStKnjige + "%');", con);
                 SQLiteDataReader reader = com.ExecuteReader();
                 while (reader.Read())
@@ -354,7 +354,9 @@ namespace LibraryProject
                     string leto_izdaje = reader.GetString(2);
                     string ime = reader.GetString(3);
                     string priimek = reader.GetString(4);
-                    seznamGradiva.Add(new Gradivo(id, naslov, leto_izdaje, ime, priimek));
+                    int avtor_id = reader.GetInt32(5);
+                    int inv_st = reader.GetInt32(6);
+                    seznamGradiva.Add(new Knjiga(id, naslov, leto_izdaje, inv_st, new Avtor(avtor_id, ime, priimek)));
                 }
                 con.Close();
             }

@@ -114,6 +114,7 @@ namespace LibraryProject
             {
                 MessageBox.Show("Napaka pri dodajanju člana!");
             }
+            loadUserList();
         }
 
         private void izposodiGradivoButton_Click(object sender, EventArgs e)
@@ -223,6 +224,10 @@ namespace LibraryProject
                                     Gradivo gradivo = new Gradivo(Convert.ToInt32(invStTextBox2.Text), naslovGradivoTextBox.Text, letoIzdajeGradivoTextBox.Text, ime, priimek, zalozbaa.Id, false);
                                     Database.DodajGradivo(gradivo);
                                 }
+
+                                //Update list boxes
+                                loadGradivoList();
+                                loadUserList();
                             }
                         }
                     }

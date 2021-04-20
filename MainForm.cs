@@ -143,6 +143,8 @@ namespace LibraryProject
         }
         private void loadGradivoList()
         {
+            gradivoListBox.Items.Clear();
+            vsoGradivoListBox.Items.Clear();
             List<Knjiga> knjige = Database.izpisVsegaGradiva();
             foreach (Knjiga knjiga in knjige)
             {
@@ -153,6 +155,8 @@ namespace LibraryProject
 
         private void isciButton_Click(object sender, EventArgs e)
         {
+            //TODO: Vid fix this špageti
+
             if(naslovTextBox2.Text.Length > 0)
             {
                 gradivoListBox.Items.Clear();

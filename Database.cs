@@ -457,5 +457,16 @@ namespace LibraryProject
             }
             return uporabnik;
         }
+
+        public static void VnesiAvtor(string ime, string priimek)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("INSERT INTO avtorji(ime, priimek) VALUES('" + ime + "', '" + priimek + "');", con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+        }
     }
 }

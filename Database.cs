@@ -439,6 +439,28 @@ namespace LibraryProject
             return seznam;
         }
 
+        public static List<Avtor> VrniVseAvtorje()
+        {
+            List<Avtor> seznam = new List<Avtor>();
+
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek FROM avtorji;", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32(0);
+                    string ime = reader.GetString(1);
+                    string priimek = reader.GetString(2);
+                    Avtor avtor = new Avtor(id, ime, priimek);
+                    seznam.Add(avtor);
+                }
+                con.Close();
+            }
+            return seznam;
+        }
+
         public static Uporabniki isciUporabnika(int uporabnik_id)
         {
             Uporabniki uporabnik = new Uporabniki();

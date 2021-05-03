@@ -87,6 +87,7 @@ namespace LibraryProject
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -96,6 +97,7 @@ namespace LibraryProject
             this.dodajGradivoTabPage.SuspendLayout();
             this.dodajClanaTabPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -131,7 +133,7 @@ namespace LibraryProject
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.imePriimekTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.claniListBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
@@ -429,22 +431,7 @@ namespace LibraryProject
             // 
             // dodajGradivoTabPage
             // 
-            this.dodajGradivoTabPage.Controls.Add(this.avtorComboBox);
-            this.dodajGradivoTabPage.Controls.Add(this.zalozbaComboBox);
-            this.dodajGradivoTabPage.Controls.Add(this.label17);
-            this.dodajGradivoTabPage.Controls.Add(this.invStTextBox2);
-            this.dodajGradivoTabPage.Controls.Add(this.label21);
-            this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton2);
-            this.dodajGradivoTabPage.Controls.Add(this.kupljenoRadioButton1);
-            this.dodajGradivoTabPage.Controls.Add(this.label15);
-            this.dodajGradivoTabPage.Controls.Add(this.letoIzdajeGradivoTextBox);
-            this.dodajGradivoTabPage.Controls.Add(this.kategorijaGradivoComboBox);
-            this.dodajGradivoTabPage.Controls.Add(this.dodajGradivoButton);
-            this.dodajGradivoTabPage.Controls.Add(this.label10);
-            this.dodajGradivoTabPage.Controls.Add(this.label11);
-            this.dodajGradivoTabPage.Controls.Add(this.label13);
-            this.dodajGradivoTabPage.Controls.Add(this.naslovGradivoTextBox);
-            this.dodajGradivoTabPage.Controls.Add(this.label12);
+            this.dodajGradivoTabPage.Controls.Add(this.tableLayoutPanel4);
             this.dodajGradivoTabPage.Location = new System.Drawing.Point(4, 29);
             this.dodajGradivoTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dodajGradivoTabPage.Name = "dodajGradivoTabPage";
@@ -455,57 +442,78 @@ namespace LibraryProject
             // 
             // avtorComboBox
             // 
+            this.avtorComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.SetColumnSpan(this.avtorComboBox, 3);
             this.avtorComboBox.FormattingEnabled = true;
-            this.avtorComboBox.Location = new System.Drawing.Point(106, 94);
+            this.avtorComboBox.Location = new System.Drawing.Point(124, 77);
             this.avtorComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.avtorComboBox.Name = "avtorComboBox";
-            this.avtorComboBox.Size = new System.Drawing.Size(180, 28);
+            this.avtorComboBox.Size = new System.Drawing.Size(1064, 28);
             this.avtorComboBox.TabIndex = 23;
             // 
             // zalozbaComboBox
             // 
+            this.zalozbaComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.SetColumnSpan(this.zalozbaComboBox, 3);
             this.zalozbaComboBox.FormattingEnabled = true;
-            this.zalozbaComboBox.Location = new System.Drawing.Point(106, 135);
+            this.zalozbaComboBox.Location = new System.Drawing.Point(124, 115);
             this.zalozbaComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.zalozbaComboBox.Name = "zalozbaComboBox";
-            this.zalozbaComboBox.Size = new System.Drawing.Size(180, 28);
+            this.zalozbaComboBox.Size = new System.Drawing.Size(1064, 28);
             this.zalozbaComboBox.TabIndex = 22;
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 18);
+            this.label17.Location = new System.Drawing.Point(4, 0);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(55, 20);
+            this.label17.Size = new System.Drawing.Size(112, 36);
             this.label17.TabIndex = 21;
             this.label17.Text = "Inv. st:";
             // 
             // invStTextBox2
             // 
-            this.invStTextBox2.Location = new System.Drawing.Point(106, 14);
+            this.invStTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.SetColumnSpan(this.invStTextBox2, 3);
+            this.invStTextBox2.Location = new System.Drawing.Point(124, 5);
             this.invStTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.invStTextBox2.Name = "invStTextBox2";
-            this.invStTextBox2.Size = new System.Drawing.Size(148, 26);
+            this.invStTextBox2.Size = new System.Drawing.Size(1064, 26);
             this.invStTextBox2.TabIndex = 20;
             // 
             // label21
             // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 255);
+            this.label21.Location = new System.Drawing.Point(4, 222);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(74, 20);
+            this.label21.Size = new System.Drawing.Size(112, 34);
             this.label21.TabIndex = 19;
             this.label21.Text = "Kupljeno:";
             // 
             // kupljenoRadioButton2
             // 
+            this.kupljenoRadioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kupljenoRadioButton2.AutoSize = true;
-            this.kupljenoRadioButton2.Location = new System.Drawing.Point(174, 255);
+            this.kupljenoRadioButton2.Location = new System.Drawing.Point(199, 227);
             this.kupljenoRadioButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kupljenoRadioButton2.Name = "kupljenoRadioButton2";
-            this.kupljenoRadioButton2.Size = new System.Drawing.Size(54, 24);
+            this.kupljenoRadioButton2.Size = new System.Drawing.Size(67, 24);
             this.kupljenoRadioButton2.TabIndex = 18;
             this.kupljenoRadioButton2.TabStop = true;
             this.kupljenoRadioButton2.Text = "Ne";
@@ -513,11 +521,14 @@ namespace LibraryProject
             // 
             // kupljenoRadioButton1
             // 
+            this.kupljenoRadioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.kupljenoRadioButton1.AutoSize = true;
-            this.kupljenoRadioButton1.Location = new System.Drawing.Point(106, 255);
+            this.kupljenoRadioButton1.Location = new System.Drawing.Point(124, 227);
             this.kupljenoRadioButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kupljenoRadioButton1.Name = "kupljenoRadioButton1";
-            this.kupljenoRadioButton1.Size = new System.Drawing.Size(55, 24);
+            this.kupljenoRadioButton1.Size = new System.Drawing.Size(67, 24);
             this.kupljenoRadioButton1.TabIndex = 17;
             this.kupljenoRadioButton1.TabStop = true;
             this.kupljenoRadioButton1.Text = "Da";
@@ -525,37 +536,51 @@ namespace LibraryProject
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 220);
+            this.label15.Location = new System.Drawing.Point(4, 186);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(90, 20);
+            this.label15.Size = new System.Drawing.Size(112, 36);
             this.label15.TabIndex = 14;
             this.label15.Text = "Leto izdaje:";
             // 
             // letoIzdajeGradivoTextBox
             // 
-            this.letoIzdajeGradivoTextBox.Location = new System.Drawing.Point(106, 215);
+            this.letoIzdajeGradivoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.SetColumnSpan(this.letoIzdajeGradivoTextBox, 3);
+            this.letoIzdajeGradivoTextBox.Location = new System.Drawing.Point(124, 191);
             this.letoIzdajeGradivoTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.letoIzdajeGradivoTextBox.Name = "letoIzdajeGradivoTextBox";
-            this.letoIzdajeGradivoTextBox.Size = new System.Drawing.Size(148, 26);
+            this.letoIzdajeGradivoTextBox.Size = new System.Drawing.Size(1064, 26);
             this.letoIzdajeGradivoTextBox.TabIndex = 13;
             // 
             // kategorijaGradivoComboBox
             // 
+            this.kategorijaGradivoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.SetColumnSpan(this.kategorijaGradivoComboBox, 3);
             this.kategorijaGradivoComboBox.FormattingEnabled = true;
-            this.kategorijaGradivoComboBox.Location = new System.Drawing.Point(106, 174);
+            this.kategorijaGradivoComboBox.Location = new System.Drawing.Point(124, 153);
             this.kategorijaGradivoComboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kategorijaGradivoComboBox.Name = "kategorijaGradivoComboBox";
-            this.kategorijaGradivoComboBox.Size = new System.Drawing.Size(180, 28);
+            this.kategorijaGradivoComboBox.Size = new System.Drawing.Size(1064, 28);
             this.kategorijaGradivoComboBox.TabIndex = 12;
             // 
             // dodajGradivoButton
             // 
-            this.dodajGradivoButton.Location = new System.Drawing.Point(130, 314);
+            this.dodajGradivoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dodajGradivoButton.Location = new System.Drawing.Point(4, 261);
             this.dodajGradivoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dodajGradivoButton.Name = "dodajGradivoButton";
-            this.dodajGradivoButton.Size = new System.Drawing.Size(112, 35);
+            this.dodajGradivoButton.Size = new System.Drawing.Size(112, 40);
             this.dodajGradivoButton.TabIndex = 11;
             this.dodajGradivoButton.Text = "Dodaj";
             this.dodajGradivoButton.UseVisualStyleBackColor = true;
@@ -563,49 +588,65 @@ namespace LibraryProject
             // 
             // label10
             // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 178);
+            this.label10.Location = new System.Drawing.Point(4, 148);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 20);
+            this.label10.Size = new System.Drawing.Size(112, 38);
             this.label10.TabIndex = 4;
             this.label10.Text = "Kategorija:";
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 138);
+            this.label11.Location = new System.Drawing.Point(4, 110);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 20);
+            this.label11.Size = new System.Drawing.Size(112, 38);
             this.label11.TabIndex = 10;
             this.label11.Text = "Založba:";
             // 
             // label13
             // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 58);
+            this.label13.Location = new System.Drawing.Point(4, 36);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 20);
+            this.label13.Size = new System.Drawing.Size(112, 36);
             this.label13.TabIndex = 6;
             this.label13.Text = "Naslov:";
             // 
             // naslovGradivoTextBox
             // 
-            this.naslovGradivoTextBox.Location = new System.Drawing.Point(106, 54);
+            this.naslovGradivoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.SetColumnSpan(this.naslovGradivoTextBox, 3);
+            this.naslovGradivoTextBox.Location = new System.Drawing.Point(124, 41);
             this.naslovGradivoTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.naslovGradivoTextBox.Name = "naslovGradivoTextBox";
-            this.naslovGradivoTextBox.Size = new System.Drawing.Size(148, 26);
+            this.naslovGradivoTextBox.Size = new System.Drawing.Size(1064, 26);
             this.naslovGradivoTextBox.TabIndex = 5;
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 98);
+            this.label12.Location = new System.Drawing.Point(4, 72);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 20);
+            this.label12.Size = new System.Drawing.Size(112, 38);
             this.label12.TabIndex = 8;
             this.label12.Text = "Avtor:";
             // 
@@ -781,6 +822,47 @@ namespace LibraryProject
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1192, 659);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.AutoSize = true;
+            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel4.ColumnCount = 4;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.invStTextBox2, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label17, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.avtorComboBox, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label21, 0, 6);
+            this.tableLayoutPanel4.Controls.Add(this.naslovGradivoTextBox, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label13, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.zalozbaComboBox, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.kupljenoRadioButton1, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.kupljenoRadioButton2, 2, 6);
+            this.tableLayoutPanel4.Controls.Add(this.label15, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label11, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.kategorijaGradivoComboBox, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.letoIzdajeGradivoTextBox, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label10, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.dodajGradivoButton, 0, 7);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 9;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1192, 659);
+            this.tableLayoutPanel4.TabIndex = 24;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -806,6 +888,8 @@ namespace LibraryProject
             this.dodajClanaTabPage.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -870,5 +954,6 @@ namespace LibraryProject
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
     }
 }

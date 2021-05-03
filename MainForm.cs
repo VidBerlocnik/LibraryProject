@@ -290,7 +290,7 @@ namespace LibraryProject
                 vsoGradivoListBox.Items.Clear();
                 foreach (Knjiga knjiga1 in knjiga)
                 {
-                    claniListBox.Items.Add(knjiga1);
+                    vsoGradivoListBox.Items.Add(knjiga1);
                 }
             }
         }

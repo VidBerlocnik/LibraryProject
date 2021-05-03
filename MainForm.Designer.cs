@@ -86,6 +86,7 @@ namespace LibraryProject
             this.label14 = new System.Windows.Forms.Label();
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.vraciloIzposojaTabPage.SuspendLayout();
@@ -94,6 +95,7 @@ namespace LibraryProject
             this.dodajGradivoTabPage.SuspendLayout();
             this.dodajClanaTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -160,13 +162,7 @@ namespace LibraryProject
             // 
             // vraciloIzposojaTabPage
             // 
-            this.vraciloIzposojaTabPage.Controls.Add(this.textBox1);
-            this.vraciloIzposojaTabPage.Controls.Add(this.label3);
-            this.vraciloIzposojaTabPage.Controls.Add(this.vrniGradivoButton);
-            this.vraciloIzposojaTabPage.Controls.Add(this.izposodiGradivoButton);
-            this.vraciloIzposojaTabPage.Controls.Add(this.vsoGradivoListBox);
-            this.vraciloIzposojaTabPage.Controls.Add(this.imePriimekLabel);
-            this.vraciloIzposojaTabPage.Controls.Add(this.izposojenoGradivoListBox);
+            this.vraciloIzposojaTabPage.Controls.Add(this.tableLayoutPanel2);
             this.vraciloIzposojaTabPage.Location = new System.Drawing.Point(4, 29);
             this.vraciloIzposojaTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vraciloIzposojaTabPage.Name = "vraciloIzposojaTabPage";
@@ -178,29 +174,33 @@ namespace LibraryProject
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 34);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox1.Location = new System.Drawing.Point(104, 35);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 26);
+            this.textBox1.Size = new System.Drawing.Size(314, 26);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 38);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(4, 30);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.Size = new System.Drawing.Size(92, 30);
             this.label3.TabIndex = 4;
             this.label3.Text = "Inv. št.:";
             // 
             // vrniGradivoButton
             // 
-            this.vrniGradivoButton.Location = new System.Drawing.Point(468, 365);
+            this.tableLayoutPanel2.SetColumnSpan(this.vrniGradivoButton, 2);
+            this.vrniGradivoButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vrniGradivoButton.Location = new System.Drawing.Point(6, 607);
             this.vrniGradivoButton.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.vrniGradivoButton.Name = "vrniGradivoButton";
-            this.vrniGradivoButton.Size = new System.Drawing.Size(112, 35);
+            this.vrniGradivoButton.Size = new System.Drawing.Size(580, 34);
             this.vrniGradivoButton.TabIndex = 14;
             this.vrniGradivoButton.Text = "Vrni";
             this.vrniGradivoButton.UseVisualStyleBackColor = true;
@@ -208,10 +208,12 @@ namespace LibraryProject
             // 
             // izposodiGradivoButton
             // 
-            this.izposodiGradivoButton.Location = new System.Drawing.Point(615, 365);
+            this.tableLayoutPanel2.SetColumnSpan(this.izposodiGradivoButton, 2);
+            this.izposodiGradivoButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.izposodiGradivoButton.Location = new System.Drawing.Point(596, 604);
             this.izposodiGradivoButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.izposodiGradivoButton.Name = "izposodiGradivoButton";
-            this.izposodiGradivoButton.Size = new System.Drawing.Size(112, 35);
+            this.izposodiGradivoButton.Size = new System.Drawing.Size(584, 40);
             this.izposodiGradivoButton.TabIndex = 13;
             this.izposodiGradivoButton.Text = "Izposodi";
             this.izposodiGradivoButton.UseVisualStyleBackColor = true;
@@ -219,36 +221,42 @@ namespace LibraryProject
             // 
             // vsoGradivoListBox
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.vsoGradivoListBox, 2);
+            this.vsoGradivoListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vsoGradivoListBox.FormattingEnabled = true;
             this.vsoGradivoListBox.HorizontalScrollbar = true;
             this.vsoGradivoListBox.ItemHeight = 20;
-            this.vsoGradivoListBox.Location = new System.Drawing.Point(759, 122);
+            this.vsoGradivoListBox.Location = new System.Drawing.Point(596, 65);
             this.vsoGradivoListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vsoGradivoListBox.Name = "vsoGradivoListBox";
             this.vsoGradivoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.vsoGradivoListBox.Size = new System.Drawing.Size(415, 504);
+            this.vsoGradivoListBox.Size = new System.Drawing.Size(584, 529);
             this.vsoGradivoListBox.TabIndex = 12;
             // 
             // imePriimekLabel
             // 
             this.imePriimekLabel.AutoSize = true;
-            this.imePriimekLabel.Location = new System.Drawing.Point(8, 9);
+            this.tableLayoutPanel2.SetColumnSpan(this.imePriimekLabel, 4);
+            this.imePriimekLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.imePriimekLabel.Location = new System.Drawing.Point(4, 0);
             this.imePriimekLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.imePriimekLabel.Name = "imePriimekLabel";
-            this.imePriimekLabel.Size = new System.Drawing.Size(102, 20);
+            this.imePriimekLabel.Size = new System.Drawing.Size(1176, 30);
             this.imePriimekLabel.TabIndex = 1;
             this.imePriimekLabel.Text = "*Ime priimek*";
             // 
             // izposojenoGradivoListBox
             // 
+            this.tableLayoutPanel2.SetColumnSpan(this.izposojenoGradivoListBox, 2);
+            this.izposojenoGradivoListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.izposojenoGradivoListBox.FormattingEnabled = true;
             this.izposojenoGradivoListBox.HorizontalScrollbar = true;
             this.izposojenoGradivoListBox.ItemHeight = 20;
-            this.izposojenoGradivoListBox.Location = new System.Drawing.Point(12, 122);
+            this.izposojenoGradivoListBox.Location = new System.Drawing.Point(4, 65);
             this.izposojenoGradivoListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.izposojenoGradivoListBox.Name = "izposojenoGradivoListBox";
             this.izposojenoGradivoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.izposojenoGradivoListBox.Size = new System.Drawing.Size(415, 504);
+            this.izposojenoGradivoListBox.Size = new System.Drawing.Size(584, 529);
             this.izposojenoGradivoListBox.TabIndex = 0;
             // 
             // iskanjeGradivaTabPage
@@ -709,19 +717,43 @@ namespace LibraryProject
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.imePriimekTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.claniListBox, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1184, 649);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.imePriimekLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.izposodiGradivoButton, 2, 3);
+            this.tableLayoutPanel2.Controls.Add(this.vrniGradivoButton, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.vsoGradivoListBox, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.izposojenoGradivoListBox, 0, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 5);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1184, 649);
+            this.tableLayoutPanel2.TabIndex = 15;
             // 
             // MainForm
             // 
@@ -737,7 +769,6 @@ namespace LibraryProject
             this.ClaniTabPage.ResumeLayout(false);
             this.ClaniTabPage.PerformLayout();
             this.vraciloIzposojaTabPage.ResumeLayout(false);
-            this.vraciloIzposojaTabPage.PerformLayout();
             this.iskanjeGradivaTabPage.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -747,6 +778,8 @@ namespace LibraryProject
             this.dodajClanaTabPage.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -810,5 +843,6 @@ namespace LibraryProject
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox avtorComboBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

@@ -88,6 +88,7 @@ namespace LibraryProject
             this.imeTextBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.ClaniTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,6 +99,7 @@ namespace LibraryProject
             this.dodajClanaTabPage.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -652,19 +654,7 @@ namespace LibraryProject
             // 
             // dodajClanaTabPage
             // 
-            this.dodajClanaTabPage.Controls.Add(this.opombeRichTextBox);
-            this.dodajClanaTabPage.Controls.Add(this.label23);
-            this.dodajClanaTabPage.Controls.Add(this.naslovTextBox);
-            this.dodajClanaTabPage.Controls.Add(this.label22);
-            this.dodajClanaTabPage.Controls.Add(this.priimekTextBox);
-            this.dodajClanaTabPage.Controls.Add(this.label19);
-            this.dodajClanaTabPage.Controls.Add(this.label18);
-            this.dodajClanaTabPage.Controls.Add(this.emailTextBox);
-            this.dodajClanaTabPage.Controls.Add(this.dodajClanaButton);
-            this.dodajClanaTabPage.Controls.Add(this.label16);
-            this.dodajClanaTabPage.Controls.Add(this.telefonTextBox);
-            this.dodajClanaTabPage.Controls.Add(this.label14);
-            this.dodajClanaTabPage.Controls.Add(this.imeTextBox2);
+            this.dodajClanaTabPage.Controls.Add(this.tableLayoutPanel5);
             this.dodajClanaTabPage.Location = new System.Drawing.Point(4, 29);
             this.dodajClanaTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dodajClanaTabPage.Name = "dodajClanaTabPage";
@@ -675,83 +665,108 @@ namespace LibraryProject
             // 
             // opombeRichTextBox
             // 
-            this.opombeRichTextBox.Location = new System.Drawing.Point(134, 195);
+            this.opombeRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.opombeRichTextBox.Location = new System.Drawing.Point(123, 183);
             this.opombeRichTextBox.MaxLength = 1000;
             this.opombeRichTextBox.Name = "opombeRichTextBox";
-            this.opombeRichTextBox.Size = new System.Drawing.Size(400, 156);
+            this.opombeRichTextBox.Size = new System.Drawing.Size(1066, 423);
             this.opombeRichTextBox.TabIndex = 19;
             this.opombeRichTextBox.Text = "";
             // 
             // label23
             // 
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(12, 129);
+            this.label23.Location = new System.Drawing.Point(4, 108);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(64, 20);
+            this.label23.Size = new System.Drawing.Size(112, 36);
             this.label23.TabIndex = 18;
             this.label23.Text = "Naslov: ";
             // 
             // naslovTextBox
             // 
-            this.naslovTextBox.Location = new System.Drawing.Point(134, 125);
+            this.naslovTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.naslovTextBox.Location = new System.Drawing.Point(124, 113);
             this.naslovTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.naslovTextBox.Name = "naslovTextBox";
-            this.naslovTextBox.Size = new System.Drawing.Size(148, 26);
+            this.naslovTextBox.Size = new System.Drawing.Size(1064, 26);
             this.naslovTextBox.TabIndex = 17;
             // 
             // label22
             // 
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 58);
+            this.label22.Location = new System.Drawing.Point(4, 36);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(68, 20);
+            this.label22.Size = new System.Drawing.Size(112, 36);
             this.label22.TabIndex = 16;
             this.label22.Text = "Priimek: ";
             // 
             // priimekTextBox
             // 
-            this.priimekTextBox.Location = new System.Drawing.Point(134, 52);
+            this.priimekTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.priimekTextBox.Location = new System.Drawing.Point(124, 41);
             this.priimekTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.priimekTextBox.Name = "priimekTextBox";
-            this.priimekTextBox.Size = new System.Drawing.Size(148, 26);
+            this.priimekTextBox.Size = new System.Drawing.Size(1064, 26);
             this.priimekTextBox.TabIndex = 15;
             // 
             // label19
             // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 195);
+            this.label19.Location = new System.Drawing.Point(4, 180);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(78, 20);
+            this.label19.Size = new System.Drawing.Size(112, 429);
             this.label19.TabIndex = 14;
             this.label19.Text = "Opombe: ";
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 166);
+            this.label18.Location = new System.Drawing.Point(4, 144);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 20);
+            this.label18.Size = new System.Drawing.Size(112, 36);
             this.label18.TabIndex = 12;
             this.label18.Text = "Email:";
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(134, 162);
+            this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.emailTextBox.Location = new System.Drawing.Point(124, 149);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(148, 26);
+            this.emailTextBox.Size = new System.Drawing.Size(1064, 26);
             this.emailTextBox.TabIndex = 11;
             // 
             // dodajClanaButton
             // 
-            this.dodajClanaButton.Location = new System.Drawing.Point(16, 360);
+            this.dodajClanaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dodajClanaButton.Location = new System.Drawing.Point(4, 614);
             this.dodajClanaButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dodajClanaButton.Name = "dodajClanaButton";
-            this.dodajClanaButton.Size = new System.Drawing.Size(112, 35);
+            this.dodajClanaButton.Size = new System.Drawing.Size(112, 40);
             this.dodajClanaButton.TabIndex = 10;
             this.dodajClanaButton.Text = "Dodaj";
             this.dodajClanaButton.UseVisualStyleBackColor = true;
@@ -759,38 +774,50 @@ namespace LibraryProject
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 94);
+            this.label16.Location = new System.Drawing.Point(4, 72);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 20);
+            this.label16.Size = new System.Drawing.Size(112, 36);
             this.label16.TabIndex = 7;
             this.label16.Text = "Telefon:";
             // 
             // telefonTextBox
             // 
-            this.telefonTextBox.Location = new System.Drawing.Point(134, 89);
+            this.telefonTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.telefonTextBox.Location = new System.Drawing.Point(124, 77);
             this.telefonTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.telefonTextBox.Name = "telefonTextBox";
-            this.telefonTextBox.Size = new System.Drawing.Size(148, 26);
+            this.telefonTextBox.Size = new System.Drawing.Size(1064, 26);
             this.telefonTextBox.TabIndex = 6;
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 22);
+            this.label14.Location = new System.Drawing.Point(4, 0);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(44, 20);
+            this.label14.Size = new System.Drawing.Size(112, 36);
             this.label14.TabIndex = 3;
             this.label14.Text = "Ime: ";
             // 
             // imeTextBox2
             // 
-            this.imeTextBox2.Location = new System.Drawing.Point(134, 17);
+            this.imeTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.imeTextBox2.Location = new System.Drawing.Point(124, 5);
             this.imeTextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imeTextBox2.Name = "imeTextBox2";
-            this.imeTextBox2.Size = new System.Drawing.Size(148, 26);
+            this.imeTextBox2.Size = new System.Drawing.Size(1064, 26);
             this.imeTextBox2.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -863,6 +890,38 @@ namespace LibraryProject
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1192, 659);
             this.tableLayoutPanel4.TabIndex = 24;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.label14, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dodajClanaButton, 0, 6);
+            this.tableLayoutPanel5.Controls.Add(this.opombeRichTextBox, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.imeTextBox2, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label19, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.naslovTextBox, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.emailTextBox, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label18, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label23, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.label22, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.priimekTextBox, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label16, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.telefonTextBox, 1, 2);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 7;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1192, 659);
+            this.tableLayoutPanel5.TabIndex = 20;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -885,11 +944,12 @@ namespace LibraryProject
             this.dodajGradivoTabPage.ResumeLayout(false);
             this.dodajGradivoTabPage.PerformLayout();
             this.dodajClanaTabPage.ResumeLayout(false);
-            this.dodajClanaTabPage.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -955,5 +1015,6 @@ namespace LibraryProject
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
     }
 }

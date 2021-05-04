@@ -13,6 +13,7 @@ namespace LibraryProject
     public partial class MainForm : Form
     {
         int uporabnik_id = -1;
+        int uredi_clana_id = -1;
         public MainForm()
         {
             InitializeComponent();
@@ -304,6 +305,34 @@ namespace LibraryProject
                     vsoGradivoListBox.Items.Add(knjiga1);
                 }
             }
+        }
+
+        private void pocistiClaniButton_Click(object sender, EventArgs e)
+        {
+            imeTextBox2.Clear();
+            priimekTextBox.Clear();
+            telefonTextBox.Clear();
+            naslovTextBox.Clear();
+            emailTextBox.Clear();
+            opombeRichTextBox.Clear();
+            uredi_clana_id = -1;
+            pocistiClaniButton.Enabled = false;
+            urediClanaButton.Enabled = false;
+        }
+
+        private void urediClanaButton_Click(object sender, EventArgs e)
+        {
+            Uporabniki uporabnik = new Uporabniki(uredi_clana_id, imeTextBox2.Text, priimekTextBox.Text, telefonTextBox.Text, naslovTextBox.Text, emailTextBox.Text, opombeRichTextBox.Text);
+            Database.posodobiClana(uporabnik);
+            imeTextBox2.Clear();
+            priimekTextBox.Clear();
+            telefonTextBox.Clear();
+            naslovTextBox.Clear();
+            emailTextBox.Clear();
+            opombeRichTextBox.Clear();
+            uredi_clana_id = -1;
+            pocistiClaniButton.Enabled = false;
+            urediClanaButton.Enabled = false;
         }
     }
 }

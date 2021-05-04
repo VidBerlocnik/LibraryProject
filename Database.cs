@@ -490,5 +490,16 @@ namespace LibraryProject
                 con.Close();
             }
         }
+
+        public static void posodobiClana(Uporabniki uporabnik)
+        {
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("UPDATE uporabniki SET ime = '"+uporabnik.ime+ "', priimek = '"+uporabnik.priimek+ "', telefon = '"+uporabnik.telefon+ "', naslov = '"+uporabnik.naslov+ "', email = '"+uporabnik.email+ "', opombe = '"+uporabnik.opombe+"' WHERE id = '" + uporabnik.id + "';", con);
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+        }
     }
 }

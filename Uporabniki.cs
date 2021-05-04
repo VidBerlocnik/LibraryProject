@@ -30,5 +30,16 @@ namespace LibraryProject
         {
             return this.ime + " " + this.priimek;
         }
+
+        public Uporabniki(int id, string ime, string priimek, string telefon, string naslov, string email, string opombe)
+        {
+            this.id = id;
+            this.ime = ime;
+            this.priimek = priimek;
+            this.telefon = telefon;
+            this.naslov = naslov;
+            this.email = email;
+            this.opombe = opombe;
+        }
     }
 }

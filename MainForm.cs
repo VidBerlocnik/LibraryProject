@@ -305,19 +305,5 @@ namespace LibraryProject
                 }
             }
         }
-
-        private void claniListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (claniListBox.SelectedIndex != -1)
-            {
-                Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
-                imeLabel.Text = uporabnik.ime;
-                priimekLabel.Text = uporabnik.priimek;
-                telefonLabel.Text = uporabnik.telefon;
-                naslovLabel.Text = uporabnik.naslov;
-                emailLabel.Text = uporabnik.email;
-                opombeLabel.Text = uporabnik.opombe;
-            }
-        }
     }
 }

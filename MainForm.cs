@@ -334,5 +334,22 @@ namespace LibraryProject
             pocistiClaniButton.Enabled = false;
             urediClanaButton.Enabled = false;
         }
+
+        private void claniListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (claniListBox.SelectedIndex != -1)
+            {
+                Uporabniki uporabnik = (Uporabniki)claniListBox.SelectedItem;
+                int id = uporabnik.id;
+                Uporabniki uporabnikk = Database.VrniUporabnika(id);
+
+                imeLabel.Text = uporabnikk.ime;
+                priimekLabel.Text = uporabnikk.priimek;
+                telefonLabel.Text = uporabnikk.telefon;
+                naslovLabel.Text = uporabnikk.naslov;
+                emailLabel.Text = uporabnikk.email;
+                opombeLabel.Text = uporabnikk.opombe;
+            }
+        }
     }
 }

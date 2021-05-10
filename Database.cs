@@ -501,5 +501,28 @@ namespace LibraryProject
                 con.Close();
             }
         }
+
+        public static Uporabniki VrniUporabnika(int uporabnik_id)
+        {
+            Uporabniki uporabnik = new Uporabniki();
+            using (SQLiteConnection con = new SQLiteConnection(conn))
+            {
+                con.Open();
+                SQLiteCommand com = new SQLiteCommand("SELECT id, ime, priimek, telefon, naslov, email, opombe FROM uporabniki WHERE id = " + uporabnik_id + ";", con);
+                SQLiteDataReader reader = com.ExecuteReader();
+                while (reader.Read())
+                {
+                    uporabnik.id = reader.GetInt32(0);
+                    uporabnik.ime = reader.GetString(1);
+                    uporabnik.priimek = reader.GetString(2);
+                    uporabnik.telefon = reader.GetString(3);
+                    uporabnik.naslov = reader.GetString(4);
+                    uporabnik.email = reader.GetString(5);
+                    uporabnik.opombe = reader.GetString(6);
+                }
+                con.Close();
+            }
+            return uporabnik;
+        }
     }
 }
